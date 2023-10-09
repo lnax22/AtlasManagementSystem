@@ -67,7 +67,8 @@ class User extends Authenticatable
     }
 
     public function subjects(){
-        return ;// リレーションの定義
+        // リレーションの定義
+        return $this->belongsToMany('App\Models\subject');
     }
 
     // いいねしているかどうか
