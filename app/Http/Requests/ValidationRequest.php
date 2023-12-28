@@ -32,11 +32,11 @@ class ValidationRequest extends FormRequest
             'over_name_kana' =>'required|katakana|string|max:30',
             'under_name_kana' =>'required|katakana|string|max:30',
             'mail_address' =>'required|email:rfc,dns|unique:users,mail|max:100',
-            'sex' =>'required|in:男性,女性,その他',
+            'sex' =>'required|in:1,2,3',
             'old_year' =>'required|after_or_equal:2000-01-01|date_format:Y-m-d',
             'old_month'=>'required|after_or_equal:2000-01-01|date_format:Y-m-d',
             'old_day'=>'required|date_format:Y-m-d|date_format:Y-m-d',
-            'role'=>'required,|in:教師(国語),教師(数学),教師(英語),生徒',
+            'role'=>'required,|in:1,2,3,4',
             'password'=>'required|min:8|max:30|confirmed',
         ];
     }
