@@ -29,8 +29,8 @@ class ValidationRequest extends FormRequest
         return [
             'over_name' =>'required|string|max:10',
             'under_name' =>'required|string|max:10',
-            'over_name_kana' =>'required|katakana|string|max:30',
-            'under_name_kana' =>'required|katakana|string|max:30',
+            'over_name_kana' =>'required|/[ァ-ヴー]+/u|string|max:30',
+            'under_name_kana' =>'required|/[ァ-ヴー]+/u|string|max:30',
             'mail_address' =>'required|email:rfc,dns|unique:users,mail|max:100',
             'sex' =>'required|in:1,2,3',
             'old_year' =>'required|after_or_equal:2000-01-01|date_format:Y-m-d',
@@ -40,4 +40,5 @@ class ValidationRequest extends FormRequest
             'password'=>'required|min:8|max:30|confirmed',
         ];
     }
+
 }

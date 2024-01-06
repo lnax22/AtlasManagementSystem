@@ -13,6 +13,10 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
+  @foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+  @endforeach
+
   <form action="{{ route('registerPost') }}" method="POST">
     @csrf
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
