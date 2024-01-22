@@ -13,9 +13,16 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-  @foreach ($errors->all() as $error)
-  <li>{{$error}}</li>
-  @endforeach
+ <!-- バリデーション エラーメッセージ-->
+ @if ($errors->any())
+ <div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+  </ul>
+ </div>
+ @endif
 
   <form action="{{ route('registerPost') }}" method="POST">
     @csrf
