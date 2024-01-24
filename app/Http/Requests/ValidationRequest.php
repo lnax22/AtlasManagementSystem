@@ -31,12 +31,12 @@ class ValidationRequest extends FormRequest
             'under_name' =>'required|string|max:10',
             'over_name_kana' =>'required|regex:/\A[ァ-ヴー]+\z/u|string|max:30',
             'under_name_kana' =>'required|regex:/\A[ァ-ヴー]+\z/u|string|max:30',
-            'mail_address' =>'required|email:rfc,dns|unique:users,mail|max:100',
+            'mail_address' =>'required|email:rfc,dns|unique:users,mail_address|max:100',
             'sex' =>'required|in:1,2,3',
-            'old_year' =>'required|after_or_equal:2000-01-01|date_format:Y-m-d',
-            'old_month'=>'required|after_or_equal:2000-01-01|date_format:Y-m-d',
-            'old_day'=>'required|date_format:Y-m-d|date_format:Y-m-d',
-            'role'=>'required,|in:1,2,3,4',
+            'old_year' =>'required_with:old_month,old_day|after_or_equal:2000-01-01|date_format:Y',
+            'old_month'=>'required_with:old_year,old_day|after_or_equal:2000-01-01|date_format:m',
+            'old_day'=>'required_with:old_month,old_year|after_or_equal:2000-01-01|date_format:d',
+            'role'=>'required|in:1,2,3,4',
             'password'=>'required|min:8|max:30|confirmed',
         ];
     }
