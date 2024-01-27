@@ -79,4 +79,11 @@ class User extends Authenticatable
     public function likePostId(){
         return Like::where('like_user_id', Auth::id());
     }
+
+    //サイドバーの項目の一部を講師アカウントのみに表示させる(スクール予約確認,スクール枠登録)
+    //roleを使えるようにする
+    public function role()
+    {
+        return $this->attributes['role']; // または適切なプロパティ名を使用して取得
+    }
 }
