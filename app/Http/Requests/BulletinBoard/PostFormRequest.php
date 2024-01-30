@@ -29,6 +29,7 @@ class PostFormRequest extends FormRequest
         ];
     }
 
+
     public function messages(){
         return [
             'post_title.min' => 'タイトルは4文字以上入力してください。',
