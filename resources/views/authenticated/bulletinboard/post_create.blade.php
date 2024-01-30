@@ -3,14 +3,28 @@
 @section('content')
 <div class="post_create_container d-flex">
   <div class="post_create_area border w-50 m-5 p-5">
+    <!-- バリデーション エラーメッセージ-->
+    @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
+
     <div class="">
       <p class="mb-0">カテゴリー</p>
       <select class="w-100" form="postCreate" name="post_category_id">
+        <option value="english">英語</option>
+        <option value="math">数学</option>
+        <option value="national">国語</option>
+      </select>
         @foreach($main_categories as $main_category)
         <optgroup label="{{ $main_category->main_category }}"></optgroup>
-        <!-- サブカテゴリー表示 -->
-        </optgroup>
         @endforeach
+
       </select>
     </div>
     <div class="mt-3">
