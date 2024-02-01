@@ -48,7 +48,7 @@ class ValidationRequest extends FormRequest
         {
             $birthDate = implode('-', $this->only(['old_year', 'old_month', 'old_day']));
             $this->merge([
-                'old' => $oldDate,
+                // 'old' => $date,
             ]);
         }
 
