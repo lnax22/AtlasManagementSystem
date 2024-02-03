@@ -45,7 +45,7 @@
         <!-- ユーザー情報一覧の表示項目に選択科目を追加する -->
         @if($user->role == 4)
          @foreach($user->subjects as $subject)
-         <span>選択科目 :{ $subject->subject }</span>
+         <span>選択科目 :{{ $subject->subject }}</span>
          @endforeach
         @endif
       </div>
