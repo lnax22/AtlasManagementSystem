@@ -11,11 +11,11 @@
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
           <div class="mr-5">
-            // コメント数
+    <!-- コメント数 -->
     <!-- public function commentCounts($post_id){
         return Post::with('postComments')->find($post_id)->postComments();
     } -->
-            <i class="fa fa-comment"></i><span class="">{{ $post->postComments($post) }}</span>
+            <i class="fa fa-comment"></i><span class="comment_Counts{{ $post->id }}">{{ $post_comment->commentCounts($post->id)->count() }}</span>
           </div>
           <div>
             @if(Auth::user()->is_Like($post->id))
