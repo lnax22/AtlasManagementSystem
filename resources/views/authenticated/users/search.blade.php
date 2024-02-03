@@ -42,8 +42,11 @@
         @endif
       </div>
       <div>
+        <!-- ユーザー情報一覧の表示項目に選択科目を追加する -->
         @if($user->role == 4)
-        <span>選択科目 :</span>
+         @foreach($user->subjects as $subject)
+         <span>選択科目 :{ $subject->subject }</span>
+         @endforeach
         @endif
       </div>
     </div>
@@ -87,7 +90,10 @@
             </select>
           </div>
           <div class="selected_engineer">
-            <label>選択科目</label>
+            <label>選択科目</label> <br>
+            <span>国語</span> <input type="checkbox" id="selected_subjects" name="selected_subjects" /><br>
+            <span>数学</span> <input type="checkbox" id="selected_subjects" name="selected_subjects" /><br>
+            <span>英語</span> <input type="checkbox" id="selected_subjects" name="selected_subjects" /><br>
           </div>
         </div>
       </div>
