@@ -17,11 +17,7 @@ class SelectIds implements DisplayUsers{
     }else{
       $role = array($role);
     }
-    if(is_null($subject_id)){
-      $subject_id = ['1', '2', '3'];
-    }else{
-      $subject_id = array($subject_id);
-    }
+
 
 
     if(is_null($keyword)){
