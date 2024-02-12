@@ -17,6 +17,8 @@ class SelectNameDetails implements DisplayUsers{
     }else{
       $role = array($role);
     }
+
+
     $users = User::with('subjects')
     ->where(function($q) use ($keyword){
       $q->Where('over_name', 'like', '%'.$keyword.'%')
@@ -24,12 +26,12 @@ class SelectNameDetails implements DisplayUsers{
       ->orWhere('over_name_kana', 'like', '%'.$keyword.'%')
       ->orWhere('under_name_kana', 'like', '%'.$keyword.'%');
     })
-    ->where(function($q) use ($role, $gender){
+    ->where(function($q) use ($role, $gender,$subjects){
       $q->whereIn('sex', $gender)
       ->whereIn('role', $role);
     })
     ->whereHas('subjects', function($q) use ($subjects){
-      $q->where('subjects.id', $subjects);
+      $q->where('subject');
     })
     ->orderBy('over_name_kana', $updown)->get();
     return $users;

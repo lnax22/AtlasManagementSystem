@@ -86,4 +86,5 @@ class User extends Authenticatable
     {
         return $this->attributes['role']; // または適切なプロパティ名を使用して取得
     }
+
 }
