@@ -31,7 +31,7 @@ class SelectNameDetails implements DisplayUsers{
       ->whereIn('role', $role);
     })
     ->whereHas('subjects', function($q) use ($subjects){
-      $q->where('subject');
+      $q->WhereIn('subject',$subjects);
     })
     ->orderBy('over_name_kana', $updown)->get();
     return $users;

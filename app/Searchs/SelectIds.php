@@ -19,7 +19,6 @@ class SelectIds implements DisplayUsers{
     }
 
 
-
     if(is_null($keyword)){
       $users = User::with('subjects')
       ->whereIn('sex', $gender)
@@ -30,7 +29,6 @@ class SelectIds implements DisplayUsers{
       ->where('id', $keyword)
       ->whereIn('sex', $gender)
       ->whereIn('role', $role)
-      ->whereIn('subject')
 
       ->whereIn('subject', $subject)
       ->orderBy('id', $updown)->get();
