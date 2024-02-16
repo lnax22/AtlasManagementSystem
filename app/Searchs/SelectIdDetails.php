@@ -6,7 +6,7 @@ use App\Models\Users\User;
 class SelectIdDetails implements DisplayUsers{
 
   // 改修課題：選択科目の検索機能
-  public function resultUsers($keyword, $category, $updown, $gender, $role, $subjects,$subject_id){
+  public function resultUsers($keyword, $category, $updown, $gender, $role, $subjects){
     if(is_null($keyword)){
       $keyword = User::get('id')->toArray();
     }else{
@@ -26,12 +26,14 @@ class SelectIdDetails implements DisplayUsers{
 
     $users = User::with('subjects')
     ->whereIn('id', $keyword)
-    ->where(function($q) use ($role, $gender,$subjects){
+    ->where(function($q) use ($role, $gender,$category){
       $q->whereIn('sex', $gender)
       ->whereIn('role', $role);
     })
-    ->whereHas('subjects', function($q) use ($subjects){
-      $q->whereIn('subject', $subjects);
+
+    //whereHasはリレーション先のテーブルを検索条件に含めたい時に活用できるもの
+    ->whereHas('subjects', function($q) use ($category){
+      $q->whereIn('id', $category);
     })
     ->orderBy('id', $updown)->get();
     return $users;

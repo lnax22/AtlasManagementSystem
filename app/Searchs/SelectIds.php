@@ -30,7 +30,6 @@ class SelectIds implements DisplayUsers{
       ->whereIn('sex', $gender)
       ->whereIn('role', $role)
 
-      ->whereIn('subject', $subject)
       ->orderBy('id', $updown)->get();
 
     }

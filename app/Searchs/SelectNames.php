@@ -17,7 +17,6 @@ class SelectNames implements DisplayUsers{
       $role = array($role);
     }
 
-
     $users = User::with('subjects')
     ->where(function($q) use ($keyword){
       $q->where('over_name', 'like', '%'.$keyword.'%')
@@ -27,7 +26,6 @@ class SelectNames implements DisplayUsers{
 
     })->whereIn('sex', $gender)
     ->whereIn('role', $role)
-    ->WhereIn('subjects',$subjects)
     ->orderBy('over_name_kana', $updown)->get();
 
     return $users;
