@@ -58,6 +58,8 @@ class CalendarView{
             $reservePart = "リモ2部";
           }else if($reservePart == 3){
             $reservePart = "リモ3部";
+          }else if($reservePart == null){
+            $reservePart = "受付終了";
           }
 
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
@@ -65,9 +67,11 @@ class CalendarView{
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'.$reservePart.'</p>';
 
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+
           }else{
             //スクール何部かを表示させる
             $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+            
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else{
