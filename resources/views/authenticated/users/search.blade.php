@@ -90,15 +90,14 @@
               <option value="4" class="">生徒</option>
             </select>
           </div>
-           @foreach($user->subjects as $subject)
+
            <div class="selected_engineer">
             <label>選択科目</label> <br>
             <!-- 同じname属性で複数のvalueを扱いたい場合にはname属性の後ろに配列を表す[]を付ける -->
-            <span>{{ $subject->subject }}</span> <input type="checkbox" name="subject[]" value="1" form="userSearchRequest"/><br>
-            <span>{{ $subject->subject }}</span> <input type="checkbox" name="subject[]" value="2" form="userSearchRequest"/><br>
-            <span>{{ $subject->subject }}</span> <input type="checkbox" name="subject[]" value="3" form="userSearchRequest"/><br>
-           </div>
+           @foreach($subjects as $subject)
+            <span>{{ $subject->subject }}</span> <input type="checkbox" name="subject[]" value="{{ $subject->id }}" form="userSearchRequest"/>
            @endforeach
+           </div>
         </div>
       </div>
       <div>

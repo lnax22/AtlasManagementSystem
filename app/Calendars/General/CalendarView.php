@@ -40,9 +40,12 @@ class CalendarView{
         $startDay = $this->carbon->copy()->format("Y-m-01");
         $toDay = $this->carbon->copy()->format("Y-m-d");
 
+        //一個一個の日付を表示
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-          $html[] = '<td class="calendar-td">';
+          //過ぎた日にち
+          $html[] = '<td class="calendar-td past">';
         }else{
+          //明日以降の日にち
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';
         }
         $html[] = $day->render();
@@ -56,15 +59,20 @@ class CalendarView{
           }else if($reservePart == 3){
             $reservePart = "リモ3部";
           }
+
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px"></p>';
+            //スクールに参加した日
+            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'.$reservePart.'</p>';
+
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+            //スクール何部かを表示させる
+            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else{
           $html[] = $day->selectPart($day->everyDay());
+          //  dd($day);
         }
         $html[] = $day->getDate();
         $html[] = '</td>';
@@ -94,4 +102,8 @@ class CalendarView{
     }
     return $weeks;
   }
+
+
+
+
 }

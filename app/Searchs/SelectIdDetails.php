@@ -22,11 +22,7 @@ class SelectIdDetails implements DisplayUsers{
     }else{
       $role = array($role);
     }
-    if(is_null($subjects)){
-      $subjects = ['1', '2','3', '4'];
-    }else{
-      $subjects = array($subjects);
-    }
+
 
 
     $users = User::with('subjects')
@@ -38,7 +34,7 @@ class SelectIdDetails implements DisplayUsers{
 
     //whereHasはリレーション先のテーブルを検索条件に含めたい時に活用できるもの
     ->whereHas('subjects', function($q) use ($subjects){
-      $q->whereIn('id', $subjects);
+      $q->whereIn('subjects.id', $subjects);
     })
     ->orderBy('id', $updown)->get();
     return $users;
