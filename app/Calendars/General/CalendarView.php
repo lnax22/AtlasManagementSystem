@@ -57,7 +57,7 @@ class CalendarView{
         //もし$day->everyDay()の戻り値が$day->authReserveDay()で返される配列に含まれていれば、条件は真となります。
         if(in_array($day->everyDay(), $day->authReserveDay())){
           $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;
-          //条件が真の場合、この行が実行されます$day->authReserveDate($day->everyDay())は、おそらく「authReserveDate」メソッドを呼び出して何らかの情報を取得しています。->first()は、取得された結果から最初の要素を取得します。これがない場合、配列全体ではなく、最初の要素だけが使われることがあります。->setting_partは、取得された要素（おそらくオブジェクト）のsetting_partプロパティを取得します。これにより、$reservePart変数にその値が代入されます。
+          //$day->everyDay() ⇨ 毎日 かつ $day->authReserveDay() ⇨ 〇〇している日
           if($reservePart == 1){
             $reservePart = "リモ1部";
           }else if($reservePart == 2){
@@ -67,17 +67,21 @@ class CalendarView{
           }
 
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-            //スクールに参加した日
+          //月初から毎日 かつ 今日よりも前の以前の日 ⇨つまり〇〇〜〇〇までの間の日
+
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px"></p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{
-            //スクール何部かを表示させる
+            //そうじゃない日　⇨つまり〇〇〜〇〇までの間の日
+
+            //スクール何部かを表示させるボタン
             $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
 
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
 
           }
         }else{
+          //$day->everyDay() ⇨ 毎日 かつ $day->authReserveDay() ⇨ 〇〇していない日
           $html[] = $day->selectPart($day->everyDay());
 
         }
@@ -85,17 +89,17 @@ class CalendarView{
         $html[] = '</td>';
 
         //スクール予約していれば参加した部数を表示させる、していない場合は受付終了
-            // 過去日での予約かどうかを確認
-            if ($toDay < $day->everyDay()) {
-              // 予約がある場合
-              if ($reservePart) {
-                // 参加した場合
-                echo "$reservePart";
-              } else {
-                // 参加していない場合
-                echo "受付終了";
-              }
-            }
+        // 過去日での予約かどうかを確認
+            // if ($toDay <= $day->everyDay()) {
+            //   // 予約がある場合
+            //   if ($reservePart) {
+            //     // 参加した場合
+            //     echo "$reservePart";
+            //   } else {
+            //     // 参加していない場合
+            //     echo "受付終了";
+            //   }
+            // }
       }
       $html[] = '</tr>';
     }

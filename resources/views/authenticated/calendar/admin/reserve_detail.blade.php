@@ -10,6 +10,9 @@
           <th class="w-25">ID</th>
           <th class="w-25">名前</th>
         </tr>
+     <div class="adjust-table-btn m-auto text-right">
+      <input type="submit" class="btn btn-danger" value="削除" form="reserveSetting" onclick="return confirm('上記の予約をキャンセルしてもよろしいですか？')">
+     </div>
         <tr class="text-center">
           <td class="w-25"></td>
           <td class="w-25"></td>
