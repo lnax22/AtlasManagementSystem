@@ -34,14 +34,12 @@ class CalendarView{
     $weeks = $this->getWeeks();
     foreach($weeks as $week){
       $html[] = '<tr class="'.$week->getClassName().'">';
-
       $days = $week->getDays();
       foreach($days as $day){
         $startDay = $this->carbon->copy()->format("Y-m-01");
         $toDay = $this->carbon->copy()->format("Y-m-d");
 
-
-        //一個一個の日付を表示
+        //過去か未来か
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
           //過ぎた日にち
           $html[] = '<td class="calendar-td past">';
@@ -52,16 +50,11 @@ class CalendarView{
         }
         $html[] = $day->render();
 
-        //in_array()は、指定した値が配列に含まれているかどうかを確認するPHP関数です。
-        //$day->everyDay()は、$dayオブジェクトのeveryDayメソッドの戻り値を表します。「everyDay」という何らかの情報を取得しています。
-        //$day->authReserveDay()は、$dayオブジェクトのauthReserveDayメソッドの戻り値を表します。このメソッドは「authReserveDay」という何らかの情報を取得しています。
-        //もし$day->everyDay()の戻り値が$day->authReserveDay()で返される配列に含まれていれば、条件は真となります。
-
         //スクール参加している日
         if(in_array($day->everyDay(), $day->authReserveDay())){
           $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;
           //$day->everyDay() ⇨ 毎日 かつ $day->authReserveDay() ⇨ 〇〇している日
-          if ($toDay <= $day->everyDay()) {
+          {
           if($reservePart == 1){
             $reservePart = "リモ1部";
           }else if($reservePart == 2){
@@ -73,21 +66,21 @@ class CalendarView{
 
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
           //月初から毎日 かつ 今日よりも前の以前の日 ⇨つまり〇〇〜〇〇までの間の日
-            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px"></p>';
+          // 【？？】pタグの中に何か文字を入れてあげて、残っている条件である「①受付終了」「②〇部参加」のどちらが適しているか確認
+          //〇部参加したと表示
+            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'. $reservePart .'</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
-
           //そうじゃない日　⇨つまり〇〇〜〇〇までの間の日
-          }else{
-            //スクール何部かを表示させるボタン
+          }else{// 【ふたつ目のelse文】
+             // 【④キャンセルボタンの記述】
             $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
 
           }
-        }else{
+        }else{// 【ひとつめのelse文】
           //$day->everyDay() ⇨ 毎日 かつ $day->authReserveDay() ⇨ 〇〇していない日
-          echo "受付終了";
+           // 【③予約する部を選択するセレクトボックスの記述】
           $html[] = $day->selectPart($day->everyDay());
-
 
         }
         $html[] = $day->getDate();
