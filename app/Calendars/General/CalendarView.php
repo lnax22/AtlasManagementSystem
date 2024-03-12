@@ -74,13 +74,14 @@ class CalendarView{
           // 【？？】pタグの中に何か文字を入れてあげて、残っている条件である「①受付終了」「②〇部参加」のどちらが適しているか確認
           //〇部参加したと表示
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'. $reservePart .'</p>';
+            $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
 
 
           //そうじゃない日　⇨つまり〇〇〜〇〇までの間の日
           }else{// 【ふたつ目のelse文】
              // 【④キャンセルボタンの記述】
             $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
-
+            $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
 
         }else{// 【ひとつめのelse文】
@@ -88,6 +89,7 @@ class CalendarView{
            // 【③予約する部を選択するセレクトボックスの記述】
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">受付終了</p>';
+            $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
            }
 
         }
