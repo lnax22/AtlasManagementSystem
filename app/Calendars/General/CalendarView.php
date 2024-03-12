@@ -42,12 +42,18 @@ class CalendarView{
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
           //過ぎた日にち
           $html[] = '<td class="calendar-td past">';
+          $html[] = $day->render();
           }else{
 
           //明日以降の日にち
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';
+          $html[] = $day->render();
+           if(in_array($day->everyDay(), $day->authReserveDay())){
+            $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;
+            }else{
+            $html[] = $day->selectPart($day->everyDay());
+          }
         }
-        $html[] = $day->render();
 
         //予約ありなしを条件にしている
         if(in_array($day->everyDay(), $day->authReserveDay())){
@@ -62,32 +68,30 @@ class CalendarView{
             $reservePart = "リモ3部";
           }
           }
-
           //過去か未来かを条件にしている
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
           //月初から毎日 かつ 今日よりも前の以前の日 ⇨つまり〇〇〜〇〇までの間の日
           // 【？？】pタグの中に何か文字を入れてあげて、残っている条件である「①受付終了」「②〇部参加」のどちらが適しているか確認
           //〇部参加したと表示
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'. $reservePart .'</p>';
-            $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+
 
           //そうじゃない日　⇨つまり〇〇〜〇〇までの間の日
           }else{// 【ふたつ目のelse文】
              // 【④キャンセルボタンの記述】
             $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
-            $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+
           }
-          $html[] = $day->selectPart($day->everyDay());
+
         }else{// 【ひとつめのelse文】
           //$day->everyDay() ⇨ 毎日 かつ $day->authReserveDay() ⇨ 〇〇していない日
            // 【③予約する部を選択するセレクトボックスの記述】
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">受付終了</p>';
-            $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
            }
-          $html[] = $day->selectPart($day->everyDay());
 
         }
+
         $html[] = $day->getDate();
         $html[] = '</td>';
       }

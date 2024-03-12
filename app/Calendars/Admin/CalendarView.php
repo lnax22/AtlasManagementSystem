@@ -3,6 +3,7 @@ namespace App\Calendars\Admin;
 use Carbon\Carbon;
 use App\Models\Users\User;
 
+//スクール予約確認
 class CalendarView{
   private $carbon;
 
@@ -45,6 +46,7 @@ class CalendarView{
           $html[] = '<td class="border '.$day->getClassName().'">';
         }
         $html[] = $day->render();
+        //何部かを表示
         $html[] = $day->dayPartCounts($day->everyDay());
         $html[] = '</td>';
       }
