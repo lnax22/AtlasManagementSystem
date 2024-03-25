@@ -41,16 +41,17 @@ class CalendarView{
         $startDay = $this->carbon->format("Y-m-01");
         $toDay = $this->carbon->format("Y-m-d");
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-          //過去日
+          //今日を含む過去日
           $html[] = '<td class="past-day border">';
         }else{
-          //今日を含まない未来の日
+          //明日以降の未来の日付
           $html[] = '<td class="border '.$day->getClassName().'">';
         }
         $html[] = $day->render();
         //何部かを表示
         $html[] = $day->dayPartCounts($day->everyDay());
         //予約している人数を表示
+
         $html[] = '</td>';
       }
       $html[] = '</tr>';

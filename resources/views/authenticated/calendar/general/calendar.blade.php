@@ -7,6 +7,7 @@
     <!-- $calendar = new CalendarView(time());
   つまり、App > Calendarsフォルダにカレンダーの表示部分に関する記述がされているのです。今回でいえば、App > Calendars > General > CalendarViewファイルとなります。-->
       <p class="text-center">{{ $calendar->getTitle() }}</p>
+
       <div class="">
         {!! $calendar->render() !!}
       </div>
@@ -14,6 +15,14 @@
     <div class="text-right w-75 m-auto">
       <input type="submit" class="btn btn-primary" value="予約する" form="reserveParts">
     </div>
+
+    <a href="{{ route('calendar
+.reserveDetail
+', ['id' => $user->id]) }}[$reservePart]
+" onclick="return confirm(‘上記の予約をキャンセルしてもよろしいですか？’)”>
+
+    <!-- スクール予約キャンセル用のモーダル -->
+
   </div>
 </div>
 @endsection
