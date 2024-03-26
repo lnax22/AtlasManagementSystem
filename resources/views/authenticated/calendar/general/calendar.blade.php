@@ -16,13 +16,8 @@
       <input type="submit" class="btn btn-primary" value="予約する" form="reserveParts">
     </div>
 
-    <a href="{{ route('calendar
-.reserveDetail
-', ['id' => $user->id]) }}[$reservePart]
-" onclick="return confirm(‘上記の予約をキャンセルしてもよろしいですか？’)”>
-
     <!-- スクール予約キャンセル用のモーダル -->
-
+  </div>
   </div>
 </div>
 @endsection

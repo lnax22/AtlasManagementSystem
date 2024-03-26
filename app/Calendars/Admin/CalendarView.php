@@ -50,7 +50,6 @@ class CalendarView{
         $html[] = $day->render();
         //何部かを表示
         $html[] = $day->dayPartCounts($day->everyDay());
-        //予約している人数を表示
 
         $html[] = '</td>';
       }
