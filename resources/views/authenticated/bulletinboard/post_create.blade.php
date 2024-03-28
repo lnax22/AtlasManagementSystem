@@ -59,8 +59,9 @@
       <div class="">
         <p class="m-1">サブカテゴリー</p>
          <select class="w-100" form="subCategory" name="sub_category_id">
+          <option value=""></option>
           @foreach($main_categories as $main_category)
-            <optgroup label="{{ $main_category->main_category }}"></optgroup>
+            <option value="select_main_category">{{ $main_category->main_category }}</option>
           @endforeach
          </select>
          <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
