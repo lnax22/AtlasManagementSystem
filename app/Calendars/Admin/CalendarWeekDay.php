@@ -25,7 +25,7 @@ class CalendarWeekDay{
 
   //スクールの予約画面の部数や人数の表示
   function dayPartCounts($ymd){
-   
+
     $html = [];
     $one_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '1')->first();
     $two_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '2')->first();
@@ -33,13 +33,13 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部 '.$one_part->where('setting_reserve', $ymd)->get()->count().'</p>' ;
+      $html[] = '<p class="day_part m-0 pt-1">1部 '.$one_part->users->count().'</p>' ;
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1">2部</p>';
+      $html[] = '<p class="day_part m-0 pt-1">2部 '.$two_part->users->count().'</p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1">3部</p>';
+      $html[] = '<p class="day_part m-0 pt-1">3部 '.$three_part->users->count().'</p>';
     }
     $html[] = '</div>';
 
