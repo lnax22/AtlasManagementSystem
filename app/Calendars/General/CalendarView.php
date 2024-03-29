@@ -80,7 +80,7 @@ class CalendarView{
           //そうじゃない日　⇨つまり〇〇〜〇〇までの間の日
           }else{// 【ふたつ目のelse文】
              // 【④キャンセルボタンの記述】
-            $html[] = '<button type="submit" class="school-modal btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())
+            $html[] = '<button type="submit" class="school-modal-open btn-danger p-0 w-75" data-toggle="modal" data-target="#exampleModal" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())
             ->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }

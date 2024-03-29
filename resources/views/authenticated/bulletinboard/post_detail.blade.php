@@ -57,7 +57,7 @@
   </div>
 </div>
 <div class="modal js-modal">
-  <div class="modal__bg js-modal-close"></div>
+  <div class="js-modal-close"></div>
   <div class="modal__content">
     <form action="{{ route('post.edit') }}" method="post">
       <div class="w-100">
@@ -75,6 +75,6 @@
       </div>
       {{ csrf_field() }}
     </form>
-  </div>
+   </div>
 </div>
 @endsection
