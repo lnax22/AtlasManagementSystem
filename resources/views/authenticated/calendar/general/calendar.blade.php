@@ -19,7 +19,7 @@
 <!-- スクール予約キャンセル用のモーダル -->
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
-  <div class="school-modal-open">
+  <div class="modal__content">
     <form action="{{ route('deleteParts') }}" method="post">
       <div class="w-100">
         <div class="modal-inner-title w-50 m-auto">
@@ -31,7 +31,7 @@
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
-          <input type="hidden" class="modal-hidden" name="" value="">
+          <input type="hidden" class="edit-modal-hidden" name="" value="">
           <input type="submit" class="btn btn-primary d-block" value="キャンセル">
         </div>
       </div>

@@ -30,7 +30,6 @@ class CalendarsController extends Controller
         return view('authenticated.calendar.admin.reserve_setting', compact('calendar'));
     }
 
-    //表示されている部数にページ遷移できるリンク(スクール予約詳細画面)
     public function updateSettings(Request $request){
         $reserveDays = $request->input('reserve_day');
         foreach($reserveDays as $day => $parts){
