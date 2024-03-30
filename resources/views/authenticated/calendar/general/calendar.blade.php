@@ -22,16 +22,16 @@
   <div class="modal__content">
     <form action="{{ route('deleteParts') }}" method="post">
       <div class="w-100">
-        <div class="modal-inner-title w-50 m-auto">
-          <input type="text" name="reservePart" class="w-100">
-        </div>
         <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
-          <input type="text" name="day" class="w-100">
-         上記の予約をキャンセルしてもよろしいですか？
+           <p class="schoolDate" name="reserveDate" class="w-100">予約日：</p>
+        </div>
+        <div class="modal-inner-title w-50 m-auto">
+          <p class="schoolTime" name="reservePart" class="w-100">時間：</p>
+          上記の予約をキャンセルしてもよろしいですか？
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
-          <input type="hidden" class="edit-modal-hidden" name="" value="">
+          <input type="hidden" class="edit-modal-hidden" name="reserveDate" value="">
           <input type="submit" class="btn btn-primary d-block" value="キャンセル">
         </div>
       </div>

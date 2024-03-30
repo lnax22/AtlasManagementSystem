@@ -1,12 +1,12 @@
 $(function () {
   $('.school-modal-open').on('click', function () {
     $('.js-modal').fadeIn();  //モーダルを表示する処理が行われます。
-    var day = $(this).attr('day');
+    var reserveDate = $(this).attr('reserveDate');
     var reservePart = $(this).attr('reservePart');
     var post_id = $(this).attr('post_id');
-    $('.modal-inner-title input').val(day);
-    $('.modal-inner-body text').text(reservePart);
-    $('.school-modal-hidden').val(post_id);
+    $('.modal-inner-title').val(day);
+    $('.modal-inner-body').text(reservePart);
+    $('.edit-modal-hidden').val(reserveDate);
     return false;
   });
   $('.js-modal-close').on('click', function () { //モーダルを非表示にする処理が行われます。
