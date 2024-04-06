@@ -23,10 +23,10 @@
     <form action="{{ route('deleteParts') }}" method="post">
       <div class="w-100">
         <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
-           <p class="schoolDate" name="reserveDate">予約日：</p>
+           <p class="schoolDate" name="reserveDate"></p>
         </div>
         <div class="modal-inner-title w-50 m-auto">
-          <p class="schoolTime" name="reservePart">時間：{{}}</p>
+          <p class="schoolTime" name="reservePart"></p>
           上記の予約をキャンセルしてもよろしいですか？
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
