@@ -37,11 +37,11 @@ class CalendarsController extends Controller
     }
 
     //スクール予約の削除
-    public function delete($id,$setting_reserve){
+    public function delete(){
         \DB::table('reserve_settings')
-            ->where('id',$id)
-            ->where('setting_reserve',$setting_reserve)
+            ->where('reserve_part',$reservePart)
+            ->where('day',$day)
             ->delete();
-        return redirect()->route('calendar.general.show');
+        return redirect('calendar.general.show');
     }
 }

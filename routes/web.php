@@ -35,7 +35,10 @@ Route::group(['middleware' => 'auth'], function(){
             Route::namespace('Admin')->group(function(){
                 Route::get('/calendar/{user_id}/admin', 'CalendarsController@show')->name('calendar.admin.show');
                 //予約詳細画面
-                Route::get('/calendar/{date}/{part}', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
+                Route::get('/calendar/{ymd}/1', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
+                Route::get('/calendar/{ymd}/2', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
+                Route::get('/calendar/{ymd}/3', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
+
                 Route::get('/setting/{user_id}/admin', 'CalendarsController@reserveSettings')->name('calendar.admin.setting');
                 Route::post('/setting/update/admin', 'CalendarsController@updateSettings')->name('calendar.admin.update');
             });

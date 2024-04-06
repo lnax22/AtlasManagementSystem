@@ -3,6 +3,7 @@ $(function () {
     $('.js-modal').fadeIn();  //モーダルを表示する処理が行われます。
     //日付取得
     var value = $(this).attr('value');
+    //this＝school-modal-open
     //時間取得
     var reservePart = $(this).attr('reserve_part');
 
