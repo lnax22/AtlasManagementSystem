@@ -28,16 +28,16 @@ Route::group(['middleware' => 'auth'], function(){
         });
         Route::namespace('Calendar')->group(function(){
             Route::namespace('General')->group(function(){
+                //スクール予約
                 Route::get('/calendar/{user_id}', 'CalendarsController@show')->name('calendar.general.show');
+
                 Route::post('/reserve/calendar', 'CalendarsController@reserve')->name('reserveParts');
-                Route::post('/delete/{value}/{reserve_part}/calendar', 'CalendarsController@delete')->name('deleteParts');
+                Route::post('/delete/calendar', 'CalendarsController@delete')->name('deleteParts');
             });
             Route::namespace('Admin')->group(function(){
                 Route::get('/calendar/{user_id}/admin', 'CalendarsController@show')->name('calendar.admin.show');
                 //予約詳細画面
-                Route::get('/calendar/{ymd}/1', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
-                Route::get('/calendar/{ymd}/2', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
-                Route::get('/calendar/{ymd}/3', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
+                Route::get('/calendar/{date}/{part}', 'CalendarsController@reserveDetail')->name('calendar.admin.detail');
 
                 Route::get('/setting/{user_id}/admin', 'CalendarsController@reserveSettings')->name('calendar.admin.setting');
                 Route::post('/setting/update/admin', 'CalendarsController@updateSettings')->name('calendar.admin.update');

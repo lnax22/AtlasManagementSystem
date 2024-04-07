@@ -38,10 +38,17 @@ class CalendarsController extends Controller
 
     //スクール予約の削除
     public function delete($value,$reservePart){
-        \DB::table('reserve_settings')
-            ->where('value',$value)
-            ->where('reserve_part',$reservePart)
-            ->delete();
+        if(in_array($day->everyDay(), $day->authReserveDay())){
+          $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;
+          if($reservePart == "リモ1部"){
+            $reservePart = 1;
+        }else if($reservePart == "リモ2部"){
+            $reservePart = 2;
+        }else if($reservePart == "リモ3部"){
+            $reservePart = 3;
+        }
+    }
+        $reservePart->delete();
         return redirect('calendar.general.show');
     }
 }
