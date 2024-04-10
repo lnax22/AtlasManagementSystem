@@ -23,11 +23,11 @@ class CalendarsController extends Controller
         try{
             $getPart = $request->getPart;
             $getDate = $request->getData;
-            $reserveDays = array_filter(array_combine($getDate, $getPart));
-            foreach($reserveDays as $key => $value){
+            $reserveDays = array_filter(array_combine($getDate, $getPart));//いらない
+            foreach($reserveDays as $key => $value){//いらない
                 $reserve_settings = ReserveSettings::where('setting_reserve', $key)->where('setting_part', $value)->first();
-                $reserve_settings->decrement('limit_users');
-                $reserve_settings->users()->attach(Auth::id());
+                $reserve_settings->decrement('limit_users');//decrementの逆　増やす
+                $reserve_settings->users()->attach(Auth::id());//attachの逆　削除
             }
             DB::commit();
         }catch(\Exception $e){
@@ -38,13 +38,7 @@ class CalendarsController extends Controller
 
     //スクール予約の削除
     public function delete($value,$reservePart){
-          if($reservePart == "リモ1部"){
-            $reservePart = 1;
-        }else if($reservePart == "リモ2部"){
-            $reservePart = 2;
-        }else if($reservePart == "リモ3部"){
-            $reservePart = 3;
-        }
+         
         $value->delete();
         $reservePart->delete();
         return redirect('calendar.general.show');

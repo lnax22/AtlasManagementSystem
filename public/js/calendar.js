@@ -12,7 +12,8 @@ $(function () {
     $('.modal-inner-body p').text("予約日:"+value);
     //時間をブラウザに表示
     $('.modal-inner-title p').text("時間:"+reservePart);
-    // $('.edit-modal-hidden').val(reserveDate);
+    $('.edit-modal-part').val(reservePart);
+    $('.edit-modal-date').val(value);
     return false;
   });
   $('.js-modal-close').on('click', function () { //モーダルを非表示にする処理が行われます。

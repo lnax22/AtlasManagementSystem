@@ -20,7 +20,7 @@
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
-    <form action="{{ route('deleteParts') }}" method="post">
+    <form action="" method="post">
       <div class="w-100">
         <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
            <p class="schoolDate" name="reserveDate"></p>
@@ -31,7 +31,8 @@
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
-          <input type="hidden" class="edit-modal-hidden" name="" value="">
+          <input type="hidden" class="edit-modal-part" name="" value="">
+          <input type="hidden" class="edit-modal-date" name="" value="">
 
           <input type="submit" class="btn btn-primary d-block" value="キャンセル">
         </div>
