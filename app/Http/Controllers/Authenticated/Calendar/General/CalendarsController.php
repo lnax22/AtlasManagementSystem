@@ -45,11 +45,11 @@ class CalendarsController extends Controller
             $reserve_settings = ReserveSettings::where('date', $date)->where('part', $part)->first();
             $reserve_settings->increment('limit_users');//decrementの逆　増やす
             $reserve_settings->users()->detach(Auth::id());//attachの逆　削除
-
+        DB::commit();
         }catch(\Exception $e){
             DB::rollback();
         }
 
-        return redirect('calendar.general.show',['user_id' => Auth::id()]);
+        return redirect()->route('calendar.general.show',['user_id' => Auth::id()]);
     }
 }

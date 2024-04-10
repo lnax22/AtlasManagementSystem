@@ -20,7 +20,7 @@
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
-    <form action="/delete/calendar" method="post">
+    <form action="/delete/calendar" method="POST">
       <div class="w-100">
         <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
            <p class="schoolDate" name="reserveDate"></p>
