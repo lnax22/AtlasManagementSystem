@@ -31,7 +31,7 @@ class CalendarsController extends Controller
             }
             DB::commit();
         }catch(\Exception $e){
-            DB::rollback();
+            DB::rollback(); //現行のトランザクションで実行した作業を取り消します
         }
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }
@@ -41,11 +41,11 @@ class CalendarsController extends Controller
         DB::beginTransaction();
         try{
             $deleteDate = $request->deleteDate;
-            $deletePart = $request->deletePart;
-            $reserve_settings = ReserveSettings::where('setting_reserve', $ymd)->where('setting_part', $part)->first();
+            $part = $request->deletePart;
+            $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $part)->first();
             $reserve_settings->increment('limit_users');//decrementの逆　増やす
             $reserve_settings->users()->detach(Auth::id());//attachの逆　削除
-        DB::commit();
+            DB::commit();
         }catch(\Exception $e){
             DB::rollback();
         }
