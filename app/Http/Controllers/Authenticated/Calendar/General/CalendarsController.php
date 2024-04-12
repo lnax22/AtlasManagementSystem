@@ -42,6 +42,8 @@ class CalendarsController extends Controller
         try{
             $deleteDate = $request->deleteDate;
             $deletePart = ReserveSettings::with('users')->where('setting_part', $part)->get();
+            $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $part)->first();
+            // dd($part);
             $reserve_settings->increment('limit_users');//decrementの逆　増やす
             $reserve_settings->users()->detach(Auth::id());//attachの逆　削除
             DB::commit();
