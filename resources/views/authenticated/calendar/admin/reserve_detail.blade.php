@@ -9,13 +9,17 @@
 
    @foreach($reservePersons as $reservePerson)
     <div class="h-75 border">
+     @if($reservePerson->users)
+      @foreach($reservePerson->users as $user)
       <table class="">
         <tr class="text-center">
-          <th class="w-25">ID<br>{{ $reservePerson->id }}</th>
-          <th class="w-25">名前<br>{{ $reservePerson->user->over_name }}{{ $reservePerson->under_name}}</th>
-          <th class="w-25">場所<br></th>
+          <th class="w-25">ID<br>{{ $user->id }}</th>
+          <th class="w-25">名前<br>{{ $user->over_name }}{{ $user->under_name}}</th>
+          <th class="w-25">場所<br>リモート</th>
         </tr>
      <div class="adjust-table-btn m-auto text-right">
+      @endforeach
+     @endif
    @endforeach
      </div>
         <tr class="text-center">
