@@ -12,7 +12,7 @@
       <table class="">
         <tr class="text-center">
           <th class="w-25">ID<br>{{ $reservePerson->id }}</th>
-          <th class="w-25">名前<br>{{ $reservePerson->over_name }}{{ $reservePerson->under_name}}</th>
+          <th class="w-25">名前<br>{{ $reservePerson->user->over_name }}{{ $reservePerson->under_name}}</th>
           <th class="w-25">場所<br></th>
         </tr>
      <div class="adjust-table-btn m-auto text-right">
