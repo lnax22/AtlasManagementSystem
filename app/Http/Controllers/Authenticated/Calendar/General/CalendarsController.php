@@ -43,17 +43,18 @@ class CalendarsController extends Controller
             $deleteDate = $request->deleteDate;
              // リクエストからデータを取得
             $deletePart = $request->input('deletePart');
+            dd($deletePart);
             // 変数の初期化
-            $numberOfParts = null;
+            $number = null;
              // 条件分岐
              if($deletePart == "リモ1部"){
-                $numberOfParts = 1;
+                $number = 1;
             }else if($deletePart == "リモ2部"){
-                $numberOfParts = 2;
+                $number = 2;
             }else if($deletePart == "リモ3部"){
-                $numberOfParts = 3;
+                $number = 3;
             }
-            $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $numberOfParts)->first();
+            $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $number)->first();
 
             // $reserve_settingsがnullでない場合にのみ処理を行う
             if($reserve_settings !== null) {
