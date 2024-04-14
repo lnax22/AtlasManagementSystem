@@ -42,18 +42,24 @@ class CalendarsController extends Controller
         try{
             $deleteDate = $request->deleteDate;
              // リクエストからデータを取得
-            $deletePart = $request->input('setting_part');
+            $deletePart = $request->input('deletePart');
+            // 変数の初期化
+            $numberOfParts = null;
              // 条件分岐
              if($deletePart == "リモ1部"){
-                $deletePart = 1;
+                $numberOfParts = 1;
             }else if($deletePart == "リモ2部"){
-                $deletePart = 2;
+                $numberOfParts = 2;
             }else if($deletePart == "リモ3部"){
-                $deletePart = 3;
+                $numberOfParts = 3;
             }
-            $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $deletePart)->first();
+            $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $numberOfParts)->first();
+
+            // $reserve_settingsがnullでない場合にのみ処理を行う
+            if($reserve_settings !== null) {
             $reserve_settings->increment('limit_users');//decrementの逆　増やす
             $reserve_settings->users()->detach(Auth::id());//attachの逆　削除
+            }
             DB::commit();
         }catch(\Exception $e){
             DB::rollback();
