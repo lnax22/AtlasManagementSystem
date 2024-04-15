@@ -52,14 +52,21 @@ class CalendarsController extends Controller
                 $number = 2;
             }else if($deletePart == "リモ3部"){
                 $number = 3;
+            }else{
+                $number = 0;
             }
+
+            // $numberが null でない場合のみ処理を実行
+            if ($number !== null) {
             $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $number)->first();
+            dd($reserve_settings);
 
             // $reserve_settingsがnullでない場合にのみ処理を行う
-            if($reserve_settings !== null) {
-            $reserve_settings->increment('limit_users');//decrementの逆　増やす
-            $reserve_settings->users()->detach(Auth::id());//attachの逆　削除
+            if ($reserve_settings !== null) {
+                $reserve_settings->increment('limit_users');//decrementの逆　増やす
+                $reserve_settings->users()->detach(Auth::id());//attachの逆　削除
             }
+        }
             DB::commit();
         }catch(\Exception $e){
             DB::rollback();
