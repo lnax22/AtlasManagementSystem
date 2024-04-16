@@ -23,9 +23,11 @@ class Post extends Model
         return $this->hasMany('App\Models\Posts\PostComment');
     }
 
+     //belongsToMany('関係するモデル', '中間テーブルのテーブル名', '中間テーブルで関係しているカラム', '第3引数で書かれたカラムと関係しているカラム
+
     public function subCategories(){
         // リレーションの定義
-        return $this->belongsTo('App\Models\Categories\subCategory','post_sub_categories','post_id','sub_category_id','main_category_id');
+        return $this->belongsTo('App\Models\Categories\subCategory','post_sub_categories','post_id','main_category_id');
     }
 
 

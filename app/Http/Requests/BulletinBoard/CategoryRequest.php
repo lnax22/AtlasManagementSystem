@@ -29,5 +29,12 @@ class PostFormRequest extends FormRequest
       ];
     }
 
+    public function messages(){
+        return [
+            'main_category_name' => 'メインカテゴリーは必ず入力してください。',
+            'sub_category_name' => 'サブカテゴリーは必ず入力してください。'
+        ];
+    }
+
 
 }
