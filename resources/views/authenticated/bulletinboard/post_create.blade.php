@@ -65,6 +65,7 @@
          <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
       </div>
+      <form action="{{ route('sub.category.create') }}" method="post" id="subCategoryRequest">{{ csrf_field() }}</form>
     </div>
   </div>
   @endcan
