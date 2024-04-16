@@ -21,11 +21,7 @@
         <option value="math">数学</option>
         <option value="national">国語</option>
       </select>
-        @foreach($main_categories as $main_category)
-        <optgroup label="{{ $main_category->main_category }}"></optgroup>
-        @endforeach
 
-      </select>
     </div>
     <div class="mt-3">
       @if($errors->first('post_title'))
@@ -59,11 +55,13 @@
       <div class="">
         <p class="m-1">サブカテゴリー</p>
          <select class="w-100" form="subCategory" name="sub_category_id">
-          <option value=""></option>
+          <!-- 上段＝登録されているメインカテゴリーを選択 -->
+           <option value=""></option>
           @foreach($main_categories as $main_category)
-            <option value="select_main_category">{{ $main_category->main_category }}</option>
+            <option value="select_sub_category">{{ $main_category->main_category }}</option>
           @endforeach
          </select>
+         <!-- 下段＝サブカテゴリーの入力 -->
          <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
       </div>
