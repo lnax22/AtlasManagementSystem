@@ -59,6 +59,7 @@ class CalendarsController extends Controller
             // $numberが null でない場合のみ処理を実行
             if ($number !== null) {
             $reserve_settings = ReserveSettings::where('setting_reserve', $deleteDate)->where('setting_part', $number)->first();
+
             // dd($reserve_settings);
 
             // $reserve_settingsがnullでない場合にのみ処理を行う
