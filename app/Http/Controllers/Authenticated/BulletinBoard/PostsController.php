@@ -77,7 +77,9 @@ class PostsController extends Controller
         return redirect()->route('post.input');
     }
     public function subCategoryCreate(Request $request){
-        SubCategory::create(['sub_category' => $request->sub_category_name]);
+        SubCategory::create(['sub_category' => $request->sub_category_name,
+        'main_category_id' => $request->main_category_id
+        ]);
         return redirect()->route('post.input');
     }
 

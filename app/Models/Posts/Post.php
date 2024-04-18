@@ -13,6 +13,7 @@ class Post extends Model
         'user_id',
         'post_title',
         'post',
+        'main_category_id'
     ];
 
     public function user(){
@@ -25,9 +26,9 @@ class Post extends Model
 
      //belongsToMany('関係するモデル', '中間テーブルのテーブル名', '中間テーブルで関係しているカラム', '第3引数で書かれたカラムと関係しているカラム
 
-    public function subCategories(){
+    public function subCategory(){
         // リレーションの定義
-        return $this->belongsTo('App\Models\Categories\subCategory','post_sub_categories','post_id','main_category_id');
+        return $this->belongsTo('App\Models\Categories\subCategory','sub_category_id','id');
     }
 
 
