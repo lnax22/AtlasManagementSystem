@@ -42,7 +42,7 @@ class CalendarsController extends Controller
         try{
             $deleteDate = $request->deleteDate;
              // リクエストからデータを取得
-            $deletePart = $request->input('deletePart');
+            $deletePart = $request->input('deletePart')[0];
             // 変数の初期化
             $number = null;
              // 条件分岐
