@@ -22,8 +22,8 @@ class CalendarsController extends Controller
         DB::beginTransaction();
         try{
             $getPart = $request->getPart;
-            $getDate = $request->getDate;
-            $reserveDays = array_filter(array_combine($getDate, $getPart));//いらない
+            $getData = $request->getData;
+            $reserveDays = array_filter(array_combine($getData, $getPart));//いらない
             foreach($reserveDays as $key => $value){//いらない
                 $reserve_settings = ReserveSettings::where('setting_reserve', $key)->where('setting_part', $value)->first();
                 $reserve_settings->decrement('limit_users');//decrementの逆　増やす
