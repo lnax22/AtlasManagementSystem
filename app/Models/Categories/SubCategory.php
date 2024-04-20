@@ -10,19 +10,16 @@ class SubCategory extends Model
     const CREATED_AT = null;
     protected $fillable = [
         'main_category_id',
-        'sub_category',
+        'sub_category'
     ];
+
     public function mainCategory(){
         // リレーションの定義
-        {
-         return $this->hasMany('App\Models\Categories\mainCategory','main_category_id','id');
-        }
+         return $this->belongsTo(MainCategory::class);
     }
 
     public function posts(){
         // リレーションの定義
-    {
-        return $this->hasMany('App\Models\posts\post','subcategory_id','id');
+       return $this->hasMany(Post::class);
     }
-}
 }
