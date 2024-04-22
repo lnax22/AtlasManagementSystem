@@ -58,7 +58,7 @@
           <!-- 上段＝登録されているメインカテゴリーを選択 -->
            <option value=""></option>
           @foreach($main_categories as $main_category)
-            <option value="select_sub_category">{{ $main_category->main_category }}</option>
+            <option value="select_sub_category">{{ $main_category }}</option>
           @endforeach
          </select>
          <!-- 下段＝サブカテゴリーの入力 -->
