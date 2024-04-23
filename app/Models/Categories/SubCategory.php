@@ -10,7 +10,7 @@ class SubCategory extends Model
     const CREATED_AT = null;
     protected $fillable = [
         'main_category_id',
-        'sub_category'
+        'main_category'
     ];
 
     public function mainCategory(){
