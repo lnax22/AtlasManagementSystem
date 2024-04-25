@@ -54,11 +54,11 @@
       <!-- サブカテゴリー追加 -->
       <div class="">
         <p class="m-1">サブカテゴリー</p>
-         <select class="w-100" form="subCategory" name="sub_category_id">
-          <!-- 上段＝登録されているメインカテゴリーを選択 -->
+        <!-- 上段＝登録されているメインカテゴリーを選択 -->
+         <select class="w-100 sub_category" name="sub_category">
            <option value=""></option>
           @foreach($main_categories as $main_category)
-            <option value="select_main_category">{{ $main_category->main_category }}</option>
+            <option value="select_main_category" name="main_category_id">{{ $main_category->main_category }}</option>
           @endforeach
          </select>
          <!-- 下段＝サブカテゴリーの入力 -->
