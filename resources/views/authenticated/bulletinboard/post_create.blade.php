@@ -62,7 +62,8 @@
           @endforeach
          </select>
          <!-- 下段＝サブカテゴリーの入力 -->
-        <input type="text" class="w-100" name="sub_category" form="subCategoryRequest">
+        <!-- <input type="text" class="w-100" name="sub_category" form="subCategoryRequest"> -->
+        <input type="text" class="w-100" name="sub_category" value="" form="subCategoryRequest">
         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
       </div>
       <form action="{{ route('sub.category.create') }}" method="post" id="subCategoryRequest">{{ csrf_field() }}</form>
