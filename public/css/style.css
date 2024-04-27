@@ -220,6 +220,10 @@ li {
   font-size: 12px;
 }
 
+.category_select{
+  color:#808080;
+}
+
 /* 掲示板　カテゴリー */
 .category_area {
   background: #FFF;

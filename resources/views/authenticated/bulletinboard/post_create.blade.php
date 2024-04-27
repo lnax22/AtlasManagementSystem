@@ -16,11 +16,14 @@
 
     <div class="">
       <p class="mb-0">カテゴリー</p>
-      <select class="w-100" form="postCreate" name="post_category_id">
+      <!-- カテゴリーの文字色は下記表示にする
+        ・メインカテゴリー：グレー
+        ・サブカテゴリー：黒
+          ※サブカテゴリーのみ選択可能 -->
+
+      <select class="w-100 category_select" form="postCreate" name="post_category_id">
        @foreach($main_categories as $main_category)
-        @foreach($sub_categories as $sub_category)
-          <option value="{{ $main_category->id }}">{{ $main_category->main_category }}<br>{{ $sub_category->sub_category}}</option>
-        @endforeach
+          <option value="{{ $main_category->sub_category }}">{{ $main_category->main_category }}</option>
        @endforeach
       </select>
 
