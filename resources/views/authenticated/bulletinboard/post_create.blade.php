@@ -17,9 +17,11 @@
     <div class="">
       <p class="mb-0">カテゴリー</p>
       <select class="w-100" form="postCreate" name="post_category_id">
-        <option value="english">英語</option>
-        <option value="math">数学</option>
-        <option value="national">国語</option>
+       @foreach($main_categories as $main_category)
+        @foreach($sub_categories as $sub_category)
+          <option value="{{ $main_category->id }}">{{ $main_category->main_category }}<br>{{ $sub_category->sub_category}}</option>
+        @endforeach
+       @endforeach
       </select>
 
     </div>
