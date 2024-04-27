@@ -55,15 +55,14 @@
       <div class="">
         <p class="m-1">サブカテゴリー</p>
         <!-- 上段＝登録されているメインカテゴリーを選択 -->
-         <select class="w-100" name="main_category_id">
-           <option value=""></option>
-          @foreach($main_categories as $main_category)
-            <option value="{{ $main_category->id }}" name="main_category_id">{{ $main_category->main_category }}</option>
-          @endforeach
+         <select class="w-100" name="main_category_id" form="subCategoryRequest">
+          <option value=""></option>
+        @foreach($main_categories as $main_category)
+          <option value="{{ $main_category->id }}">{{ $main_category->main_category }}</option>
+        @endforeach
          </select>
          <!-- 下段＝サブカテゴリーの入力 -->
         <input type="text" class="w-100" name="sub_category" form="subCategoryRequest">
-        <input type="hidden" name="main_category_id" value="{{ $main_category->id }}" form="subCategoryRequest">
         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
       </div>
       <form action="{{ route('sub.category.create') }}" method="post" id="subCategoryRequest">{{ csrf_field() }}</form>
