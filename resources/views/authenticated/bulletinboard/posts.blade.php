@@ -31,18 +31,18 @@
   </div>
   <div class="other_area border w-25">
     <div class="border m-4">
-      <div class=""><a href="{{ route('post.input') }}">投稿</a></div>
+      <button class="bulletin_board_posts_btn"><a href="{{ route('post.input') }}" class="bulletin_board_posts_btn">投稿</a></button>
       <div class="">
         <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
         <input type="submit" value="検索" form="postSearchRequest">
       </div>
-      <input type="submit" name="like_posts" class="category_btn" value="いいねした投稿" form="postSearchRequest">
-      <input type="submit" name="my_posts" class="category_btn" value="自分の投稿" form="postSearchRequest">
+      <input type="submit" name="like_posts" class="category_btn_like" value="いいねした投稿" form="postSearchRequest">
+      <input type="submit" name="my_posts" class="category_btn_myPosts" value="自分の投稿" form="postSearchRequest">
       @foreach($categories as $category)
       <ul>
         <li class="main_categories" name="category_word" value=" ">{{ $category->main_category}}</li>
       </ul>
-      <input type="submit" name="category_word" class="category_btn" value="{{ $category->sub_category }}" form="postSearchRequest">
+      <input type="submit" name="category_word" class="category_btn_sub" value="{{ $category->sub_category }}" form="postSearchRequest">
       @endforeach
     </div>
   </div>

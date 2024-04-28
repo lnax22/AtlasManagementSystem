@@ -13,6 +13,15 @@
   margin-top: -230px;
 }
 
+/* 新規登録画面 */
+/* .div.w-100 vh-100 d-flex {
+  height: 70px;
+} */
+
+/* ログイン画面 */
+.div.border vh-50 w-25 {
+  width: 120px;
+}
 
 /* body */
 .all_content {
@@ -162,6 +171,18 @@ li {
   color: red;
 }
 
+.bulletin_board_posts_btn {
+  background-color: #0099FF;
+  border-radius: 7px;
+  padding: 2px 7px;
+  width: 130px;
+  height: 32px;
+}
+
+.bulletin_board_posts_btn a {
+  color: #fff;
+}
+
 /* 掲示板 詳細画面 */
 .contributor {
   font-size: 12px;
@@ -220,8 +241,8 @@ li {
   font-size: 12px;
 }
 
-.category_select{
-  color:#808080;
+.category_select {
+  color: #808080;
 }
 
 /* 掲示板　カテゴリー */
@@ -238,14 +259,34 @@ li {
   color: #FFF;
 }
 
-.category_btn {
+.category_btn_like,.category_btn_myPosts,.category_btn_sub {
   font-size: 12px;
   border-radius: 5px;
   padding: 0 5px;
   border: none;
-  background: #999;
   color: #FFF;
 }
+
+.category_btn_like{
+  background: #FF97C2;
+  border-radius: 7px;
+  padding: 2px 7px;
+  width: 130px;
+  height: 32px;
+}
+
+.category_btn_myPosts{
+  background: #FFCC00;
+  border-radius: 7px;
+  padding: 2px 7px;
+  width: 130px;
+  height: 32px;
+}
+
+.category_btn_sub{
+  color: #000;
+}
+
 
 .main_categories span,
 .sub_categories li input {
