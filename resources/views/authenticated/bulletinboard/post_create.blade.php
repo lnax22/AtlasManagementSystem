@@ -20,10 +20,12 @@
         ・メインカテゴリー：グレー
         ・サブカテゴリー：黒
           ※サブカテゴリーのみ選択可能 -->
-
       <select class="w-100 category_select" form="postCreate" name="post_category_id">
        @foreach($main_categories as $main_category)
-          <option value="{{ $main_category->sub_category }}">{{ $main_category->main_category }}</option>
+        <option value="{{ $main_category->id }}">{{ $main_category->main_category }}</option>
+         @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
+          <option value="{{ $sub_category->id }}">{{ $sub_category->sub_category }}</option>
+         @endforeach
        @endforeach
       </select>
 
