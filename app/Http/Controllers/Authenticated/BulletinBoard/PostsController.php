@@ -26,10 +26,10 @@ class PostsController extends Controller
             ->where('post_title', 'like', '%'.$request->keyword.'%')
             ->orWhere('post', 'like', '%'.$request->keyword.'%')->get();
         }else if($request->category_word){
-            $sub_category = $request->category_word;
+            $sub_category = $request->sub_category_word;
             $main_category = $request->category_word;
-            $posts = Post::with('user', 'postComments')
-            ->where('id','main_category_id', 'sub_category')->get();
+            $posts = Post::with('subCategory')
+            ->whereIn('id',$sub_category)->get();
         }else if($request->like_posts){
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')

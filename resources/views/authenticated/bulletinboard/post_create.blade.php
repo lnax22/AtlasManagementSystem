@@ -23,12 +23,12 @@
       <select class="w-100 category_select" form="postCreate" name="post_category_id">
       @foreach($main_categories as $main_category)
         <optgroup label="{{ $main_category->main_category }}">
-          @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
-            <option value="{{ $sub_category->id }}">{{ $sub_category->sub_category }}</option>
+            @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
+                <option value="{{ $sub_category->id }}">{{ $sub_category->sub_category }}</option>
             @endforeach
         </optgroup>
-        @endforeach
-      </select>
+    @endforeach
+</select>
 
     </div>
     <div class="mt-3">

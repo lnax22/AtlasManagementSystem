@@ -9,11 +9,13 @@
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
 
-     <ul>
-       @foreach($post->where('id', 'user_id') as $sub_category)
-          <input type="submit" name="selected_sub_category" value="{{ $sub_category->sub_category }}">
-        @endforeach
-     </ul>
+    @foreach($main_categories as $main_category)
+    <div class="selected_sub_category">
+     @foreach($sub_categories->where('id', $main_category->id)  as $sub_category)
+      <input type="submit" name="sub_category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" >
+     @endforeach
+    </div>
+    @endforeach
 
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
@@ -50,7 +52,7 @@
         <li class="main_categories" name="category_word">{{ $main_category->main_category}}
         </li>
        @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
-       <input type="submit" name="category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+       <input type="submit" name="sub_category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
        @endforeach
       </ul>
       @endforeach
