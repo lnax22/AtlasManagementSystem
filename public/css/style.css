@@ -101,6 +101,10 @@ li {
   width: 70%;
 }
 
+.cancelBtn{
+  border-radius: 5%;
+}
+
 /* モーダル */
 .modal {
   display: none;
@@ -124,7 +128,8 @@ li {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 85%;
+  height: 40%;
 }
 
 /* 掲示板 */
@@ -154,6 +159,7 @@ li {
 
 .post_bottom_area {
   justify-content: space-between;
+  margin-left: 365px;
 }
 
 .like_btn,
@@ -177,10 +183,21 @@ li {
   padding: 2px 7px;
   width: 130px;
   height: 32px;
+  text-align: center
 }
 
 .bulletin_board_posts_btn a {
   color: #fff;
+}
+
+.searchKeyword,
+.myLikePosts {
+  display: flex;
+}
+
+.search {
+  background-color: #0099FF;
+  color: #FFF;
 }
 
 /* 掲示板 詳細画面 */
@@ -215,6 +232,23 @@ li {
 
 .edit-modal-btn {
   justify-content: space-between;
+}
+
+.editBtn {
+  background-color: #0099FF;
+  color: #FFF;
+  border-radius: 7px;
+  padding: 2px 12px;
+}
+
+.trashBtn a {
+  color: #FFF;
+}
+
+.trashBtn {
+  background-color: #FF0000;
+  border-radius: 7px;
+  padding: 2px 12px;
 }
 
 /* 掲示板 コメント */
@@ -257,7 +291,9 @@ li {
   color: #FFF;
 }
 
-.category_btn_like,.category_btn_myPosts,.category_btn_sub {
+.category_btn_like,
+.category_btn_myPosts,
+.category_btn_sub {
   font-size: 12px;
   border-radius: 5px;
   padding: 0 5px;
@@ -265,7 +301,7 @@ li {
   color: #FFF;
 }
 
-.category_btn_like{
+.category_btn_like {
   background: #FF97C2;
   border-radius: 7px;
   padding: 2px 7px;
@@ -273,7 +309,7 @@ li {
   height: 32px;
 }
 
-.category_btn_myPosts{
+.category_btn_myPosts {
   background: #FFCC00;
   border-radius: 7px;
   padding: 2px 7px;
@@ -281,7 +317,7 @@ li {
   height: 32px;
 }
 
-.category_btn_sub{
+.category_btn_sub {
   color: #000;
 }
 

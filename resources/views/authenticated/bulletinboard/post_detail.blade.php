@@ -10,9 +10,9 @@
           @if(Auth::user()->id == $post->user_id)
           <div>
             <!-- 編集ボタン -->
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
+            <button class="editBtn"><span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span></button>
             <!-- 削除ボタン -->
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
+            <button class="trashBtn"><a href="{{ route('post.delete', ['id' => $post->id]) }}"  class="trash" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></button>
           </div>
           @endif
         </div>
