@@ -29,7 +29,7 @@ class PostsController extends Controller
             $sub_category = $request->sub_category_word;
             $main_category = $request->category_word;
             $posts = Post::with('user','subCategory')
-            ->where('sub_category_id')->get();
+            ->where('sub_category','id')->get();
         }else if($request->like_posts){
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')

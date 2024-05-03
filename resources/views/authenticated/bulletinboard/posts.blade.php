@@ -11,7 +11,7 @@
 
     @foreach($main_categories as $main_category)
     <div class="selected_sub_category">
-     @foreach($sub_categories->where('id', $main_category->id)  as $sub_category)
+     @foreach($sub_categories->where('id', $main_category->id) as $sub_category)
       <input type="submit" name="sub_category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" >
      @endforeach
     </div>
