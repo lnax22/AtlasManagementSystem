@@ -21,6 +21,7 @@
 /* ログイン画面 */
 .div.border vh-50 w-25 {
   width: 120px;
+  text-align: center;
 }
 
 /* body */
@@ -101,7 +102,7 @@ li {
   width: 70%;
 }
 
-.cancelBtn{
+.cancelBtn {
   border-radius: 5%;
 }
 
@@ -198,6 +199,58 @@ li {
 .search {
   background-color: #0099FF;
   color: #FFF;
+}
+
+/* アコーディオンメニュー（サブカテゴリー検索） */
+.accordion-container {
+  position: relative;
+  margin: 0 0 0 auto;
+  outline: 0;
+  cursor: pointer;
+}
+
+.accordion-container .accordion-title {
+  position: relative;
+  font-size: 1.25em;
+  font-weight: normal;
+
+}
+
+.accordion-title {
+  position: relative;
+}
+
+.accordion-title:after {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 45%;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  width: 8px;
+  height: 10px;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  color: #000;
+}
+
+.accordion-title.open:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 45%;
+  color: #000;
+}
+
+.accordion-content {
+  display: none;
+  background-color: #fff;
+  font-size: 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* 掲示板 詳細画面 */
