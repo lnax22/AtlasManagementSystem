@@ -27,9 +27,11 @@ class PostsController extends Controller
             ->orWhere('post', 'like', '%'.$request->keyword.'%')->get();
         }else if($request->category_word){
             $sub_category = $request->sub_category_word;
+            dd($sub_category);
             $main_category = $request->category_word;
-            $posts = Post::with('subCategory')
-            ->where('sub_category','post_id')->get();
+            $posts = Post::with('sub_categories')
+            ->whereHas('sub_categories', function ($q) use ($request) {$q->where('sub_category', '=', $request->sub_category_word);})
+            ->get();
         }else if($request->like_posts){
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')
@@ -54,10 +56,15 @@ class PostsController extends Controller
 
     public function postCreate(PostFormRequest $request){
         $post = Post::create([
+
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
+
+        $sub_category = $request->post_category_id;
+        $post_id = Post::findOrFail($post->id);
+        $post_id->sub_categories()->attach($sub_category);
         return redirect()->route('post.show');
     }
 

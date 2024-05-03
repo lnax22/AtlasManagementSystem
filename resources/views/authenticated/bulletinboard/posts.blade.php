@@ -10,14 +10,7 @@
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
 
     @foreach($post->sub_categories as $sub_category)
-     <span>{{ $sub_category->sub_category}}</span>
-    @endforeach
-    @foreach($main_categories as $main_category)
-    <div class="selected_sub_category">
-     @foreach($sub_categories->where('id', $main_category->id) as $sub_category)
-      <input type="submit" name="sub_category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" >
-     @endforeach
-    </div>
+     <input type="submit" class = "category_btn_sub" value = "{{ $sub_category->sub_category}}">
     @endforeach
 
 
