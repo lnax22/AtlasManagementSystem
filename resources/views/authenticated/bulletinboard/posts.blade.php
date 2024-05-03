@@ -9,6 +9,9 @@
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
 
+    @foreach($post->sub_categories as $sub_category)
+     <span>{{ $sub_category->sub_category}}</span>
+    @endforeach
     @foreach($main_categories as $main_category)
     <div class="selected_sub_category">
      @foreach($sub_categories->where('id', $main_category->id) as $sub_category)
@@ -16,6 +19,7 @@
      @endforeach
     </div>
     @endforeach
+
 
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
