@@ -6,22 +6,23 @@
   padding: 0;
 }
 
-/* header */
-.title {
-  text-align: center;
-  font-size: 20px;
-  margin-top: -230px;
-}
-
 /* 新規登録画面 */
 /* .div.w-100 vh-100 d-flex {
   height: 70px;
 } */
 
 /* ログイン画面 */
-.div.border vh-50 w-25 {
-  width: 120px;
+/* .border {
+  width: 170px;
   text-align: center;
+  margin-top: 270px;
+  margin-left: 220px;
+} */
+
+.login-title {
+  margin-left: 100px;
+  font-size: 20px;
+  margin-top: -185px;
 }
 
 /* body */
@@ -47,6 +48,10 @@ li {
 }
 
 .sidebar p a {
+  color: #FFF;
+}
+
+.icon{
   color: #FFF;
 }
 
@@ -84,6 +89,10 @@ li {
 .day_part {
   color: #494949;
   font-size: 12px;
+  padding-left: 0.5em;
+  text-indent: -0.5em;
+  white-space: nowrap;
+  justify-content: space-around;
 }
 
 .adjust-table {
@@ -102,9 +111,26 @@ li {
   width: 70%;
 }
 
-.cancelBtn {
+.school-modal-open {
   border-radius: 5%;
 }
+
+/* スクール予約確認 */
+.sat {
+  color: #0000FF;
+}
+
+.sun {
+  color: #FF0000;
+}
+
+.text-left {
+  padding-left: 0.5em;
+  text-indent: -0.5em;
+  justify-content: space-between;
+}
+
+
 
 /* モーダル */
 .modal {
@@ -182,7 +208,7 @@ li {
   background-color: #0099FF;
   border-radius: 7px;
   padding: 2px 7px;
-  width: 130px;
+  width: 100px;
   height: 32px;
   text-align: center
 }
@@ -199,6 +225,20 @@ li {
 .search {
   background-color: #0099FF;
   color: #FFF;
+}
+
+.post_title {
+  color: #000;
+  font-weight: bold;
+}
+
+.post_fullName {
+  color: #888888;
+  font-weight: bold;
+}
+
+.post_status {
+  color: #888888;
 }
 
 /* アコーディオンメニュー（サブカテゴリー検索） */
@@ -227,13 +267,12 @@ li {
   top: 45%;
   transition: all 0.2s ease-in-out;
   display: block;
-  width: 8px;
+  width: 10px;
   height: 10px;
-  border-top: solid 2px #fff;
-  border-right: solid 2px #fff;
+  border-top: solid 2px #000;
+  border-right: solid 2px #000;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
-  color: #000;
 }
 
 .accordion-title.open:after {
@@ -371,7 +410,8 @@ li {
 }
 
 .category_btn_sub {
-  color: #000;
+  background-color: #3399FF;
+  color: #EEE;
 }
 
 

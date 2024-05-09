@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\Categories;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostFormRequest extends FormRequest
+class CategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,20 +21,29 @@ class PostFormRequest extends FormRequest
      *
      * @return array
      */
+    
     public function rules(){
       return [
-        'main_category_name'=>'required|string|max:100|unique:main_categories,main_category',
-        'main_category_id'=>'required|in:1,2,3,4',
-        'sub_category_name'=>'required|string|max:100|unique:sub_categories,sub_category'
+        'main_category_name' => 'required|string|max:100|unique:main_categories,main_category',
+        'main_category_id' => 'required|exists:main_categories,id',
+        'sub_category_name' => 'required|string|max:100|unique:sub_categories,sub_category'
       ];
     }
 
     public function messages(){
-        return [
-            'main_category_name' => 'メインカテゴリーは必ず入力してください。',
-            'sub_category_name' => 'サブカテゴリーは必ず入力してください。'
-        ];
-    }
+    return [
+        'main_category_name.required' => 'メインカテゴリーは必須項目です。',
+        'main_category_name.string' => 'メインカテゴリーは文字列で入力してください。',
+        'main_category_name.max' => 'メインカテゴリーは100文字以内で入力してください。',
+        'main_category_name.unique' => '既に同じ名前のメインカテゴリーが存在します。',
+        'main_category_id.required' => 'メインカテゴリーは必須項目です。',
+        'main_category_id.exists' => '選択されたメインカテゴリーは登録されていません。',
+        'sub_category_name.required' => 'サブカテゴリーは必須項目です。',
+        'sub_category_name.string' => 'サブカテゴリーは文字列で入力してください。',
+        'sub_category_name.max' => 'サブカテゴリーは100文字以内で入力してください。',
+        'sub_category_name.unique' => '既に同じ名前のサブカテゴリーが存在します。'
+    ];
+  }
 
 
 }

@@ -6,8 +6,8 @@
     <p class="w-75 m-auto">投稿一覧</p>
     @foreach($posts as $post)
     <div class="post_area border w-75 m-auto p-3">
-      <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
-      <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
+      <p class="post_fullName"><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
+      <p><a href="{{ route('post.detail', ['id' => $post->id]) }}" class="post_title">{{ $post->post_title }}</a></p>
 
     @foreach($post->sub_categories as $sub_category)
      <input type="submit" class = "category_btn_sub" value = "{{ $sub_category->sub_category}}">
@@ -47,19 +47,20 @@
         <input type="submit" name="my_posts" class="category_btn_myPosts" value="自分の投稿" form="postSearchRequest">
       </div>
       <p class="">カテゴリー検索</p>
-      <div id="accordion" class="accordion-container">
-        <h4 class="accordion-title js-accordion-title">
          <ul>
           @foreach($main_categories as $main_category)
+          <div id="accordion" class="accordion-container">
+            <div class="accordion-title js-accordion-title">
            <li class="main_categories" name="category_word">{{ $main_category->main_category}}
            </li>
-          @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
-          <input type="submit" name="sub_category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+           @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
+           <input type="submit" name="sub_category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
           @endforeach
-        </ul>
+          </div>
+         </ul>
           @endforeach
-        </h4>
-     </div>
+        </div>
+
   </div>
   <form action="{{ route('post.show') }}" method="get" id="postSearchRequest"></form>
 </div>

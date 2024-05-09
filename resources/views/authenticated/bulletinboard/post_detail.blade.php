@@ -6,9 +6,13 @@
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
+            <!-- サブカテゴリー表示 -->
+            @foreach($post->sub_categories as $sub_category)
+            <input type="submit" class = "category_btn_sub" value = "{{ $sub_category->sub_category}}">
+            @endforeach
           </div>
-          @if(Auth::user()->id == $post->user_id)
           <div>
+            @if(Auth::user()->id == $post->user_id)
             <!-- 編集ボタン -->
             <button class="editBtn"><span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span></button>
             <!-- 削除ボタン -->

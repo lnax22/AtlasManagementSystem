@@ -26,8 +26,8 @@ class CalendarView{
     $html[] = '<th>水</th>';
     $html[] = '<th>木</th>';
     $html[] = '<th>金</th>';
-    $html[] = '<th>土</th>';
-    $html[] = '<th>日</th>';
+    $html[] = '<th class="sat">土</th>';
+    $html[] = '<th class="sun">日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';
     $html[] = '<tbody>';
@@ -73,7 +73,7 @@ class CalendarView{
           //月初から毎日 かつ 今日よりも前の以前の日 ⇨つまり〇〇〜〇〇までの間の日
           // 【？？】pタグの中に何か文字を入れてあげて、残っている条件である「①受付終了」「②〇部参加」のどちらが適しているか確認
           //〇部参加したと表示
-            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'. $reservePart .'</p>';
+            $html[] = '<p class="m-auto p-0" style="font-size:12px">'. $reservePart .'</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
 
 
