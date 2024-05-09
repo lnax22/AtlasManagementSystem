@@ -37,7 +37,7 @@ li {
 
 /* サイドバー */
 .sidebar {
-  width: 150px;
+  width: 170px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
@@ -51,8 +51,9 @@ li {
   color: #FFF;
 }
 
-.icon{
-  color: #FFF;
+.sidebar-title {
+  white-space: nowrap;
+  margin-left: 5px;
 }
 
 /* トップページ */
