@@ -12,7 +12,7 @@
 } */
 
 /* ログイン画面 */
-.loginViewAll{
+.loginViewAll {
   background-color: #EEEEEE;
 }
 
@@ -114,8 +114,38 @@ li {
   width: 70%;
 }
 
-.school-modal-open {
-  border-radius: 5%;
+/* 予約詳細画面 */
+.reserve-detail-table {
+  width: 320px;
+}
+
+.text-bar {
+  background-color: #03AAD2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  font-weight: bold;
+}
+
+.text-center {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-bar-list {
+  color: #FFF;
+}
+
+tr:nth-child(odd) {
+  background-color: #FFF;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #DDFFFF;
+  width: 100%;
 }
 
 /* スクール予約確認 */
@@ -134,8 +164,11 @@ li {
 }
 
 
-
 /* モーダル */
+.school-modal-open {
+  border-radius: 5%;
+}
+
 .modal {
   display: none;
   height: 100vh;
@@ -245,57 +278,13 @@ li {
   color: #888888;
 }
 
+.other_area w-25 {
+  padding: 25px;
+}
+
 
 /* アコーディオンメニュー（サブカテゴリー検索） */
-.accordion-container {
-  position: relative;
-  margin: 0 0 0 auto;
-  outline: 0;
-  cursor: pointer;
-}
 
-.accordion-container .accordion-title {
-  position: relative;
-  font-size: 1.25em;
-  font-weight: normal;
-
-}
-
-.accordion-title {
-  position: relative;
-}
-
-.accordion-title:after {
-  content: "";
-  position: absolute;
-  right: 25px;
-  top: 45%;
-  transition: all 0.2s ease-in-out;
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-top: solid 2px #000;
-  border-right: solid 2px #000;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
-
-.accordion-title.open:after {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 45%;
-  color: #000;
-}
-
-.accordion-content {
-  display: none;
-  background-color: #fff;
-  font-size: 20px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 
 /* 掲示板 詳細画面 */
 .contributor {
@@ -501,7 +490,6 @@ li {
   height: 80vh;
   overflow: scroll;
   padding: 10px;
-  background: #FFF;
   border-radius: 5px;
 }
 
@@ -514,15 +502,23 @@ li {
   height: 250px;
   border-radius: 7px;
   margin: 10px;
+  background-color: #FFF;
+  padding: 15px;
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .5);
+}
+
+.search_conditions {
+  margin-bottom: 15px;
 }
 
 .search_conditions span {
   cursor: pointer;
+  display: inline-block;
+  border-bottom: 2px solid #ccc;
 }
 
 .search_conditions_inner {
   display: none;
-  background: #FFF;
 }
 
 .subject_edit_btn {
@@ -544,7 +540,7 @@ li {
   height: 35px;
   font-size: 100%;
   box-sizing: border-box;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 6px 6px 6px 6px;
   border: 1px solid #ccc;
   margin-top: 10px;
   background-color: #EEEEEE;
@@ -554,12 +550,12 @@ li {
   display: inline-block;
   margin-right: 0;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 5px;
   width: 80px;
   height: 35px;
   font-size: 100%;
   box-sizing: border-box;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 6px 6px 6px 6px;
   border: 1px solid #ccc;
   margin-top: 10px;
   background-color: #EEEEEE;
@@ -569,7 +565,7 @@ li {
   display: inline-block;
   margin-right: 0;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 5px;
   width: 80px;
   height: 35px;
   font-size: 100%;
@@ -581,14 +577,23 @@ li {
 }
 
 .search_btn {
-  background-color: #0099FF;
-  color: #EEEEEE;
+  background-color: #03AAD2;
+  color: #FFF;
   padding: 2px 7px;
   width: 220px;
   height: 32px;
   text-align: center;
   border: none;
   border-radius: 7px;
+  margin-top: 30px;
+}
+
+.engineer {
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #ccc;
+  background-color: #EEEEEE;
+  width: 80px;
+  height: 35px;
 }
 
 .reset {

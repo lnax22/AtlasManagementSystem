@@ -7,26 +7,25 @@
 
     <p><span>{{ $date }}日</span><span class="ml-3">{{ $part }}部</span></p>
 
-   @foreach($reservePersons as $reservePerson)
     <div class="h-75 border">
+        <div class="text-bar">
+          <p class="text-bar-list">ID</p>
+          <p class="text-bar-list">名前</p>
+          <p class="text-bar-list">場所</p>
+        </div>
+    <table class="reserve-detail-table">
+    @foreach($reservePersons as $reservePerson)
      @if($reservePerson->users)
       @foreach($reservePerson->users as $user)
-      <table class="">
         <tr class="text-center">
-          <th class="w-25">ID<br>{{ $user->id }}</th>
-          <th class="w-25">名前<br>{{ $user->over_name }}{{ $user->under_name}}</th>
-          <th class="w-25">場所<br>リモート</th>
+          <td class="">{{ $user->id }}</td>
+          <td class="">{{ $user->over_name }}{{ $user->under_name}}</td>
+          <td class="">リモート</td>
         </tr>
-     <div class="adjust-table-btn m-auto text-right">
       @endforeach
      @endif
-   @endforeach
-     </div>
-        <tr class="text-center">
-          <td class="w-25"></td>
-          <td class="w-25"></td>
-        </tr>
-      </table>
+    @endforeach
+    </table>
     </div>
   </div>
 </div>

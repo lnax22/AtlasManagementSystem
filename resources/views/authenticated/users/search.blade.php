@@ -71,7 +71,7 @@
           <option value="DESC">降順</option>
         </select>
       </div>
-      <div class="">
+      <div class="add-search_conditions">
         <p class="m-0 search_conditions"><span>検索条件の追加</span></p>
         <div class="search_conditions_inner">
           <div>
@@ -81,7 +81,7 @@
             <span>その他</span><input type="radio" name="sex" value="3" form="userSearchRequest">
           </div>
           <div>
-            <label>権限</label>
+            <label>権限</label><br>
             <select name="role" form="userSearchRequest" class="engineer">
               <option selected disabled>----</option>
               <option value="1">教師(国語)</option>

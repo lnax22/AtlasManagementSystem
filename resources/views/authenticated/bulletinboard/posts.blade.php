@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="board_area w-100 border m-auto d-flex">
+<div class="board_area w-100 m-auto d-flex">
   <div class="post_view w-75 mt-5">
     <p class="w-75 m-auto">投稿一覧</p>
     @foreach($posts as $post)
@@ -35,16 +35,16 @@
     </div>
     @endforeach
   </div>
-  <div class="other_area border w-25">
-    <div class="border m-4">
+  <div class="other_area w-25">
+    <div class="m-4">
       <button class="bulletin_board_posts_btn"><a href="{{ route('post.input') }}" class="bulletin_board_posts_btn">投稿</a></button>
       <div class="searchKeyword">
         <input type="text" class="search-bar-left" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
         <input type="submit" class="search-bar-right" value="検索" form="postSearchRequest">
       </div>
       <div class="myLikePosts">
-        <input type="submit" name="like_posts" class="category_btn_like" value="いいねした投稿" form="postSearchRequest">
-        <input type="submit" name="my_posts" class="category_btn_myPosts" value="自分の投稿" form="postSearchRequest">
+        <input type="submit" name="like_posts" class="category_btn_like" value="いいねした投稿" form="postSearchRequest"></input>
+        <input type="submit" name="my_posts" class="category_btn_myPosts" value="自分の投稿" form="postSearchRequest"></input>
       </div>
       <p class="">カテゴリー検索</p>
          @foreach($main_categories as $main_category)
