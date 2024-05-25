@@ -12,17 +12,19 @@
 } */
 
 /* ログイン画面 */
-/* .border {
-  width: 170px;
-  text-align: center;
-  margin-top: 270px;
-  margin-left: 220px;
-} */
+.loginViewAll{
+  background-color: #EEEEEE;
+}
 
 .login-title {
   margin-left: 100px;
   font-size: 20px;
   margin-top: -185px;
+}
+
+.loginView {
+  text-align: center;
+  margin-top: 225px;
 }
 
 /* body */
@@ -209,9 +211,10 @@ li {
   background-color: #0099FF;
   border-radius: 7px;
   padding: 2px 7px;
-  width: 100px;
+  width: 220px;
   height: 32px;
-  text-align: center
+  text-align: center;
+  border: none;
 }
 
 .bulletin_board_posts_btn a {
@@ -242,7 +245,6 @@ li {
   color: #888888;
 }
 
-.search-bar-left
 
 /* アコーディオンメニュー（サブカテゴリー検索） */
 .accordion-container {
@@ -330,10 +332,11 @@ li {
 }
 
 .editBtn {
-  background-color: #0099FF;
+  background-color: #007BFF;
   color: #FFF;
   border-radius: 7px;
   padding: 2px 12px;
+  border: none;
 }
 
 .trashBtn a {
@@ -344,6 +347,7 @@ li {
   background-color: #FF0000;
   border-radius: 7px;
   padding: 2px 12px;
+  border: none;
 }
 
 /* 掲示板 コメント */
@@ -400,21 +404,55 @@ li {
   background: #FF97C2;
   border-radius: 7px;
   padding: 2px 7px;
-  width: 130px;
-  height: 32px;
+  width: 110px;
+  height: 35px;
 }
 
 .category_btn_myPosts {
   background: #FFCC00;
   border-radius: 7px;
   padding: 2px 7px;
-  width: 130px;
-  height: 32px;
+  width: 110px;
+  height: 35px;
 }
 
 .category_btn_sub {
   background-color: #3399FF;
   color: #EEE;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.search-bar-left {
+  -webkit-appearance: none;
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 155px;
+  height: 35px;
+  font-size: 100%;
+  box-sizing: border-box;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  border-right: none;
+  margin-top: 10px;
+  background-color: #EEEEEE;
+}
+
+.search-bar-right {
+  -webkit-appearance: none;
+  display: inline-block;
+  padding: 0 10px;
+  color: #fff;
+  width: 65px;
+  height: 35px;
+  font-size: 100%;
+  vertical-align: top;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background: #0099FF;
+  margin-top: 10px;
 }
 
 
@@ -474,6 +512,8 @@ li {
 .one_person {
   width: 250px;
   height: 250px;
+  border-radius: 7px;
+  margin: 10px;
 }
 
 .search_conditions span {
@@ -493,4 +533,75 @@ li {
 
 .subject_inner {
   display: none;
+}
+
+.free_word {
+  -webkit-appearance: none;
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 10px;
+  width: 220px;
+  height: 35px;
+  font-size: 100%;
+  box-sizing: border-box;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  background-color: #EEEEEE;
+}
+
+.userSearch-category {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 80px;
+  height: 35px;
+  font-size: 100%;
+  box-sizing: border-box;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  background-color: #EEEEEE;
+}
+
+.userSearch-updown {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 80px;
+  height: 35px;
+  font-size: 100%;
+  box-sizing: border-box;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  background-color: #EEEEEE;
+}
+
+.search_btn {
+  background-color: #0099FF;
+  color: #EEEEEE;
+  padding: 2px 7px;
+  width: 220px;
+  height: 32px;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+}
+
+.reset {
+  color: #0099FF;
+  border: none;
+  text-align: center;
+  padding: 2px 7px;
+  width: 220px;
+  height: 32px;
+  margin-top: 10px;
+}
+
+
+.info {
+  color: #888888;
 }
