@@ -11,6 +11,27 @@
   height: 70px;
 } */
 
+.loginHere {
+  margin-left: 60px;
+}
+
+.d-flex {
+  background-color: #EEEEEE;
+}
+
+.borderRegister {
+  background-color: #FFF;
+  border-radius: 18px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 340px;
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .5);
+}
+
+.d-block {
+  background-color: #FFF;
+}
+
 /* ログイン画面 */
 .loginViewAll {
   background-color: #EEEEEE;
@@ -27,10 +48,38 @@
   margin-top: 225px;
 }
 
-/* body */
-.all_content {
-  background: #ECF1F6;
+.loginForm {
+  background-color: #EEEEEE;
 }
+
+.loginBorder {
+  background-color: #FFF;
+  margin: 0 auto;
+  border-radius: 18px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 35px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .5);
+  width: 410px;
+  height: 320px;
+
+}
+
+.signUp {
+  margin-left: 115px;
+}
+
+.d-block {
+  font-weight: bold;
+  text-align: left;
+}
+
+/* body */
+/* .all_content {
+  background: #ECF1F6;
+} */
 
 ul,
 li {
@@ -114,6 +163,10 @@ li {
   width: 70%;
 }
 
+.school-modal-open btn {
+  border-radius: .25rem;
+}
+
 /* 予約詳細画面 */
 .reserve-detail-table {
   width: 320px;
@@ -162,6 +215,8 @@ tr:nth-child(even) {
   text-indent: -0.5em;
   justify-content: space-between;
 }
+
+
 
 
 /* モーダル */
