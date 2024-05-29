@@ -67,7 +67,6 @@
   box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .5);
   width: 410px;
   height: 320px;
-
 }
 
 .signUp {
@@ -83,6 +82,7 @@
 /* .all_content {
   background: #ECF1F6;
 } */
+/* マイページ */
 
 ul,
 li {
@@ -99,6 +99,7 @@ li {
 
 .main-container {
   width: 100%;
+  background-color: #EEE;
 }
 
 .sidebar p a {
@@ -114,6 +115,7 @@ li {
 .user_status {
   border-radius: 10px;
   background: #FFF;
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .4);
 }
 
 /* スクール予約関連 */
@@ -218,8 +220,6 @@ tr:nth-child(even) {
   text-indent: -0.5em;
   justify-content: space-between;
 }
-
-
 
 
 /* モーダル */
@@ -342,6 +342,69 @@ tr:nth-child(even) {
 
 
 /* アコーディオンメニュー（サブカテゴリー検索） */
+.accordion-container {
+  position: relative;
+  width: 100%;
+  border-top: none;
+  outline: 0;
+  cursor: pointer
+}
+
+.accordion-container .accordion-title {
+  position: relative;
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.accordion-container .accordion-title:hover,
+.accordion-container .accordion-title:active,
+.accordion-container .content-entry.open .accordion-title {
+  background-color: #00aaa7;
+  color: white;
+}
+
+.accordion-container .accordion-title:hover i:before,
+.accordion-container .accordion-title:hover i:active,
+.accordion-container .content-entry.open i {
+  color: white;
+}
+
+.accordion-title {
+  position: relative;
+}
+
+.accordion-title:after {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 38%;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.accordion-title.open:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 45%;
+}
+
+.accordion-content {
+  display: none;
+  padding-left: 2.3125em;
+}
+
+/* CSS for CodePen */
+.accordion-container {
+  width: 300px;
+  margin: 1.875em auto;
+}
 
 
 /* 掲示板 詳細画面 */
@@ -468,6 +531,11 @@ tr:nth-child(even) {
   color: #EEE;
   border-radius: 10px;
   padding: 3px;
+}
+
+.sub_category_accordion {
+  border: none;
+  font-size: small;
 }
 
 .search-bar-left {

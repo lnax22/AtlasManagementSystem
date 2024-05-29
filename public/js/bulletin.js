@@ -71,7 +71,6 @@ $(function () {
       /*矢印の向きを変更*/
       $(this).toggleClass("open", 200);
     });
-
   });
 
 

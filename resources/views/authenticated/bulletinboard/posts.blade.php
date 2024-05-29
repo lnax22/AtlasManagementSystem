@@ -50,13 +50,13 @@
          @foreach($main_categories as $main_category)
          <ul>
          <div id="accordion" class="accordion-container">
-            <div class="accordion-title js-accordion-title">
-           <li class="main_categories" name="category_word">{{ $main_category->main_category}}
-           </li>
+           <div class="main_categories" name="category_word">
+            <p>{{ $main_category->main_category}}</p>
+           </div>
            @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
-           <input type="submit" name="sub_category_word" class="category_btn_sub" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+            <input type="submit" name="sub_category_word" class="sub_category_accordion" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
           @endforeach
-          </div>
+        </div>
          </ul>
          @endforeach
         </div>
