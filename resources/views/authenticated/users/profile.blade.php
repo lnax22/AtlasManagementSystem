@@ -15,10 +15,12 @@
         @endforeach
       </div>
       <div class="">
+        <!-- bladeでの認可 -->
         @can('admin')
-        <span class="subject_edit_btn">選択科目の編集</span>
+        <span class="subject_edit_btn">選択科目の登録</span>
+         <span class="dli-chevron-down"></span>
         <div class="subject_inner">
-          <form action="{{ route('user.edit') }}" method="post">
+          <form action="{{ route('user.edit') }}" method="post" class="subjectRegistration">
             @foreach($subject_lists as $subject_list)
             <div>
               <label>{{ $subject_list->subject }}</label>
