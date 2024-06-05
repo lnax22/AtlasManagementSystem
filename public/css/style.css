@@ -731,6 +731,25 @@ li {
   color: #888888;
 }
 
+.arrow2 {
+  color: #000;
+  line-height: 1;
+  width: 0.7em;
+  height: 0.7em;
+  border: 0.14em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+  transform: translateY(-25%) rotate(135deg);
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.arrow2.up {
+  transform: rotate(315deg);
+}
+
+
 /* ユーザープロフィール */
 .subject_edit_btn {
   font-size: 15px;

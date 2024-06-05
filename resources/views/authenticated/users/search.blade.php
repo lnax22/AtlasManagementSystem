@@ -72,7 +72,7 @@
         </select>
       </div>
       <div class="add-search_conditions">
-        <p class="m-0 search_conditions"><span>検索条件の追加</span></p>
+        <p class="m-0 search_conditions"><span>検索条件の追加</span><span class="dli-chevron-down arrow2"></span></p>
         <div class="search_conditions_inner">
           <div>
             <label>性別</label>
@@ -110,4 +110,5 @@
     <form action="{{ route('user.show') }}" method="get" id="userSearchRequest"></form>
   </div>
 </div>
+<script src="user_search.js"></script>
 @endsection
