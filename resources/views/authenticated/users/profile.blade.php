@@ -14,12 +14,14 @@
         <span>{{ $subject->subject }}</span>
         @endforeach
       </div>
-      <div class="">
+      <div class="accordion">
         <!-- bladeでの認可 -->
         @can('admin')
-        <span class="subject_edit_btn">選択科目の登録</span>
-         <span class="dli-chevron-down"></span>
-        <div class="subject_inner">
+        <div class="accordion-header">
+         <span class="subject_edit_btn">選択科目の登録</span>
+         <span class="dli-chevron-down arrow"></span>
+        </div>
+        <div class="accordion-content subject_inner">
           <form action="{{ route('user.edit') }}" method="post" class="subjectRegistration">
             @foreach($subject_lists as $subject_list)
             <div>
@@ -37,5 +39,5 @@
     </div>
   </div>
 </div>
-
+<script src="user_search.js"></script>
 @endsection

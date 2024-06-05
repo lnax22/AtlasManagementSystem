@@ -197,12 +197,12 @@ li {
   color: #FFF;
 }
 
-tr:nth-child(odd) {
+.tr text-center:nth-child(odd) {
   background-color: #FFF;
   width: 100%;
 }
 
-tr:nth-child(even) {
+.tr text-center:nth-child(even) {
   background-color: #DDFFFF;
   width: 100%;
 }
@@ -648,44 +648,6 @@ tr:nth-child(even) {
   display: none;
 }
 
-.subject_edit_btn {
-  font-size: 15px;
-  color: #03AAD2;
-  cursor: pointer;
-}
-
-.subjectRegistration {
-  display: flex;
-}
-
-.dli-chevron-down {
-  display: inline-block;
-  vertical-align: middle;
-  color: #03AAD2;
-  line-height: 1;
-  width: 0.7em;
-  height: 0.7em;
-  border: 0.14em solid currentColor;
-  border-left: 0;
-  border-bottom: 0;
-  box-sizing: border-box;
-  transform: translateY(-25%) rotate(135deg);
-}
-
-.dli-chevron-down.open {
-  display: inline-block;
-  vertical-align: middle;
-  color: #03AAD2;
-  line-height: 1;
-  width: 0.7em;
-  height: 0.7em;
-  border: 0.14em solid currentColor;
-  border-left: 0;
-  border-bottom: 0;
-  box-sizing: border-box;
-  transform: translateY(25%) rotate(-45deg);
-}
-
 .btn-primary {
   margin-left: 10px;
 }
@@ -765,7 +727,51 @@ tr:nth-child(even) {
   margin-top: 10px;
 }
 
-
 .info {
   color: #888888;
+}
+
+/* ユーザープロフィール */
+.subject_edit_btn {
+  font-size: 15px;
+  color: #03AAD2;
+  cursor: pointer;
+}
+
+.subjectRegistration {
+  display: flex;
+}
+
+.arrow {
+  color: #03AAD2;
+  line-height: 1;
+  width: 0.7em;
+  height: 0.7em;
+  border: 0.14em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+  transform: translateY(-25%) rotate(135deg);
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.up {
+  transform: rotate(315deg);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+}
+
+.accordion-content.open {
+  display: block;
 }

@@ -7,10 +7,13 @@ $(function () {
     $('.subject_inner').slideToggle();
   });
 
-  $(".subject_edit_btn").on("click", function () {
+  $(function () {
+    $(".accordion-header").on("click", function () {
       /*クリックでコンテンツを開閉*/
       $(this).next().slideToggle(200);
       /*矢印の向きを変更*/
-      $(this).toggleClass("open", 200);
+      $(this).find('.arrow').toggleClass("up", 200);
+
     });
+  });
 });
