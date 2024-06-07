@@ -48,20 +48,22 @@
       </div>
       <p class="">カテゴリー検索</p>
          @foreach($main_categories as $main_category)
+        <div id="accordion" class="accordion-container">
          <ul>
-         <div id="accordion" class="accordion-container">
            <div class="main_categories" name="category_word">
-            <p>{{ $main_category->main_category}}</p>
-           </div>
-           @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
-            <input type="submit" name="sub_category_word" class="sub_category_accordion" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
-          @endforeach
+             <p>{{ $main_category->main_category}}</p>
+              <span class="dli-chevron-down arrow3"></span>
+              <div class="sub_categories_inner">
+               @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
+               <input type="submit" name="sub_category_word" class="sub_category_accordion" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+               @endforeach
+              </div>
+            </div>
+          </ul>
         </div>
-         </ul>
          @endforeach
-        </div>
-
-  </div>
+    </div>
   <form action="{{ route('post.show') }}" method="get" id="postSearchRequest"></form>
 </div>
+<script src="bulletin.js"></script>
 @endsection

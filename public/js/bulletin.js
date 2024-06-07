@@ -63,15 +63,16 @@ $(function () {
     return false;
   });
 
-  // アコーディオンメニュー(カテゴリー検索サイドバー)
+  // アコーディオンメニュー(カテゴリー検索)
   $(function () {
-    $(".js-accordion-title").on("click", function () {
+    $(".main_categories_click").on("click", function () {
       /*クリックでコンテンツを開閉*/
       $(this).next().slideToggle(200);
       /*矢印の向きを変更*/
-      $(this).toggleClass("open", 200);
+      $(this).find('.arrow3').toggleClass("up", 200);
     });
   });
+
 
 
 });
