@@ -577,51 +577,49 @@ li {
   cursor: pointer;
 }
 
-.accordion-container {
-  border: 1px solid #ccc;
+.accordion-category {
   margin: 10px;
-  border-radius: 5px;
 }
 
 .main_categories {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 4px;
   cursor: pointer;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #ccc;
   position: relative;
+  border-bottom: 2px solid #CCCCCC;
 }
 
 .main_categories p {
   flex: 1;
   margin: 0;
+  white-space: nowrap;
 }
 
-.arrow3{
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid black;
+.arrow3 {
+  color: #000;
+  line-height: 1;
+  width: 0.7em;
+  height: 0.7em;
+  border: 0.14em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+  transform: translateY(-25%) rotate(135deg);
   transition: transform 0.3s ease;
-  position: absolute;
-  right: 10px;
+  margin-left: 70px;
 }
 
 .arrow3.up {
-  transform: rotate(180deg);
+  transform: rotate(315deg);
 }
 
-.sub_categories {
+.sub_categories_inner {
   display: none;
-  padding-left: 20px;
-  background-color: #f1f1f1;
 }
 
 .sub_category_accordion {
   display: block;
-  margin: 5px 0;
 }
 
 /* サブカテゴリー */

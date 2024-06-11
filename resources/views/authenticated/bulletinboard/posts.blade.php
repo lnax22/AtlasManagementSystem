@@ -48,7 +48,7 @@
       </div>
       <p class="">カテゴリー検索</p>
          @foreach($main_categories as $main_category)
-        <div id="accordion" class="accordion-container">
+        <div id="accordion" class="accordion-category">
          <ul>
            <div class="main_categories" name="category_word">
              <p>{{ $main_category->main_category}}</p>

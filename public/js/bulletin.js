@@ -65,9 +65,9 @@ $(function () {
 
   // アコーディオンメニュー(カテゴリー検索)
   $(function () {
-    $(".main_categories_click").on("click", function () {
-      /*クリックでコンテンツを開閉*/
-      $(this).next().slideToggle(200);
+    $(".main_categories").on("click", function () {
+      // クリックされた .main_categories 内の .sub_categories をスライド表示/非表示
+      $(this).find('.sub_categories_inner').slideToggle(200);
       /*矢印の向きを変更*/
       $(this).find('.arrow3').toggleClass("up", 200);
     });
