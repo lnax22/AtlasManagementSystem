@@ -335,6 +335,7 @@ li {
 
 .post_status {
   color: #888888;
+  margin-left: 110px;
 }
 
 .other_area w-25 {
@@ -493,6 +494,10 @@ li {
   border-radius: 10px;
 }
 
+.accordion-category_title {
+  margin-top: 20px;
+}
+
 .category_box {
   border-radius: 5px;
   padding: 3px;
@@ -537,6 +542,8 @@ li {
 .sub_category_accordion {
   border: none;
   font-size: small;
+  margin-top: 60px;
+  margin-left: -190px;
 }
 
 .search-bar-left {

@@ -3,16 +3,6 @@
 @section('content')
 <div class="post_create_container d-flex">
   <div class="post_create_area border w-50 m-5 p-5">
-    <!-- バリデーション エラーメッセージ-->
-    @if ($errors->any())
-    <div class="alert alert-danger">
-      <ul>
-        @foreach($errors->all() as $error)
-        <li>{{$error}}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
 
     <div class="">
       <p class="mb-0">カテゴリー</p>
