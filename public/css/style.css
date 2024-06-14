@@ -226,9 +226,8 @@ li {
   justify-content: space-between;
 }
 
-
 /* モーダル */
-.school-modal-open {
+.button{
   border-radius: 5%;
 }
 
