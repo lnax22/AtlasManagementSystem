@@ -52,7 +52,7 @@
          <ul>
           <li>
            <div class="main_categories" name="category_word">
-             <p>{{ $main_category->main_category}}</p>
+             <p class="main_categories_under">{{ $main_category->main_category}}</p>
              <span class="dli-chevron-down arrow3"></span>
            <div class="sub_categories_inner">
               @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)

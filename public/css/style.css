@@ -180,11 +180,11 @@ li {
 
 .text-bar {
   background-color: #03AAD2;
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 25px;
   font-weight: bold;
+  width: 750px;
 }
 
 .text-center {
@@ -195,17 +195,30 @@ li {
 
 .text-bar-list {
   color: #FFF;
+  margin-left: -20px;
 }
 
-.tr text-center:nth-child(odd) {
+.text-reserve-detail {
+  display: flex;
+  justify-content: space-around;
+  width: 750px;
+  padding: 5px;
+}
+
+.reserve-detail-table tr:nth-child(odd) {
   background-color: #FFF;
-  width: 100%;
 }
 
-.tr text-center:nth-child(even) {
+.reserve-detail-table tr:nth-child(even) {
   background-color: #DDFFFF;
-  width: 100%;
 }
+
+.border_reserve {
+  width: 700px;
+
+}
+
+.date_pate {}
 
 /* スクール予約確認 */
 .sat {
@@ -539,13 +552,6 @@ li {
   padding: 3px;
 }
 
-.sub_category_accordion {
-  border: none;
-  font-size: small;
-  margin-top: 60px;
-  margin-left: -190px;
-}
-
 .search-bar-left {
   -webkit-appearance: none;
   display: inline-block;
@@ -594,13 +600,16 @@ li {
   padding: 4px;
   cursor: pointer;
   position: relative;
-  border-bottom: 2px solid #CCCCCC;
 }
 
 .main_categories p {
   flex: 1;
   margin: 0;
   white-space: nowrap;
+}
+
+.main_categories_under {
+  border-bottom: 2px solid #CCCCCC;
 }
 
 .arrow3 {
@@ -614,7 +623,6 @@ li {
   box-sizing: border-box;
   transform: translateY(-25%) rotate(135deg);
   transition: transform 0.3s ease;
-  margin-left: 70px;
 }
 
 .arrow3.up {
@@ -626,8 +634,13 @@ li {
 }
 
 .sub_category_accordion {
-  display: block;
+  border: none;
+  font-size: small;
+  margin-top: 60px;
+  margin-left: -190px;
+  border-bottom: 2px solid #CCCCCC;
 }
+
 
 /* サブカテゴリー */
 .subcategory_area {
