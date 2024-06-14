@@ -1,9 +1,9 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="vh-100 pt-5" style="background:#ECF1F6;">
-  <div class="border m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF;">
-    <div class="w-75 m-auto border" style="border-radius:5px;">
+<div class="w-75 m-auto">
+ <div class="border m-5" style="align-items:center; justify-content:center; border-radius:5px; background:#FFF;">
+   <div class="border">
     <!-- $calendar = new CalendarView(time());
   つまり、App > Calendarsフォルダにカレンダーの表示部分に関する記述がされているのです。今回でいえば、App > Calendars > General > CalendarViewファイルとなります。-->
       <p class="text-center">{{ $calendar->getTitle() }}</p>
@@ -12,7 +12,7 @@
         {!! $calendar->render() !!}
       </div>
     </div>
-    <div class="text-right w-75 m-auto">
+    <div class="text-right m-auto">
       <input type="submit" class="btn btn-primary" value="予約する" form="reserveParts">
     </div>
 

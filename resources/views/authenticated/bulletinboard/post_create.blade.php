@@ -3,7 +3,6 @@
 @section('content')
 <div class="post_create_container d-flex">
   <div class="post_create_area border w-50 m-5 p-5">
-
     <div class="">
       <p class="mb-0">カテゴリー</p>
       <!-- カテゴリーの文字色は下記表示にする
@@ -44,6 +43,9 @@
   <div class="w-25 ml-auto mr-auto">
     <div class="category_area mt-5 p-5">
       <div class="">
+        @if($errors->first('main_category_name'))
+        <span class="error_message">{{ $errors->first('main_category_name') }}</span>
+        @endif
         <p class="m-0">メインカテゴリー</p>
         <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
@@ -51,6 +53,12 @@
       <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">{{ csrf_field() }}</form>
       <!-- サブカテゴリー追加 -->
       <div class="">
+        @if($errors->first('main_category_id'))
+        <span class="error_message">{{ $errors->first('main_category_id') }}</span>
+        @endif
+        @if($errors->first('sub_category_name'))
+        <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
+        @endif
         <p class="m-1">サブカテゴリー</p>
         <!-- 上段＝登録されているメインカテゴリーを選択 -->
          <select class="w-100" name="main_category_id" form="subCategoryRequest">

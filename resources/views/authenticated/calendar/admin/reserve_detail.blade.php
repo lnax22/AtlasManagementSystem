@@ -2,8 +2,11 @@
 
 @section('content')
 <!-- 予約詳細画面 -->
-<div class="vh-100 d-flex" style="align-items:center; justify-content:center;">
-  <div class="w-50 m-auto h-75">
+<div class="w-75 m-auto">
+ <div class="border m-5" style="align-items:center; justify-content:center; border-radius:5px; background:#FFF;">
+   <div class="border">
+
+  <!-- <div class="w-50 m-auto h-75"> -->
 
     <p class="date_pate"><span>{{ $date }}日</span><span class="ml-3">{{ $part }}部</span></p>
 

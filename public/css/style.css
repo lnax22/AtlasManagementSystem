@@ -10,11 +10,6 @@
 /* .div.w-100 vh-100 d-flex {
   height: 70px;
 } */
-
-.loginHere {
-  margin-left: 80px;
-}
-
 .borderRegisterAllView {
   background-color: #EEEEEE;
 }
@@ -67,10 +62,6 @@
   box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .5);
   width: 410px;
   height: 320px;
-}
-
-.signUp {
-  margin-left: 115px;
 }
 
 .d-block {
@@ -710,10 +701,6 @@ li {
 
 .search_conditions_inner {
   display: none;
-}
-
-.btn-primary {
-  margin-left: 10px;
 }
 
 .free_word {
