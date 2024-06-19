@@ -82,7 +82,7 @@ li {
 
 /* サイドバー */
 .sidebar {
-  width: 215px;
+  width: 205px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
@@ -140,13 +140,16 @@ li {
   background: #EEE;
 }
 
+.day_part_count {
+  margin-right: 30px;
+}
+
 .day_part {
   color: #494949;
   font-size: 12px;
   padding-left: 0.5em;
   text-indent: -0.5em;
   white-space: nowrap;
-  justify-content: space-around;
 }
 
 .adjust-table {
@@ -163,16 +166,16 @@ li {
 
 .adjust-table-btn {
   width: 70%;
+  padding: 15px;
 }
 
 .school-modal-open btn {
   border-radius: .25rem;
 }
 
-
 /* 予約詳細画面 */
 .reserve-detail-table {
-  width: 320px;
+  margin: 0 auto;
 }
 
 .text-bar {
@@ -181,7 +184,8 @@ li {
   justify-content: space-around;
   height: 25px;
   font-weight: bold;
-  width: 750px;
+  width: 680px;
+  margin-left: 10px;
 }
 
 .text-center {
@@ -192,13 +196,13 @@ li {
 
 .text-bar-list {
   color: #FFF;
-  margin-left: -20px;
+  margin-left: -30px;
 }
 
 .text-reserve-detail {
   display: flex;
   justify-content: space-around;
-  width: 750px;
+  width: 680px;
   padding: 5px;
 }
 
@@ -210,14 +214,31 @@ li {
   background-color: #DDFFFF;
 }
 
-.border_reserve {
-  width: 700px;
-
+.date_pate {
+  margin-top: 100px;
+  margin-left: 190px;
 }
 
-.date_pate {}
+.border-reserve-detail {
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .5);
+  width: 700px;
+  padding: 3px;
+  margin: 0 auto;
+}
+
 
 /* スクール予約確認 */
+.school_reserve,
+.school-general {
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-bottom: 15px;
+}
+
 .sat {
   color: #0000FF;
 }
@@ -672,6 +693,7 @@ li {
 
 
 /* ユーザー検索 */
+
 .reserve_users_area {
   display: flex;
   width: 800px;
@@ -685,7 +707,7 @@ li {
 }
 
 .reserve_users_area_side {
-  margin: 20px;
+  margin: 10px;
   margin-top: 55px;
 }
 
@@ -701,12 +723,12 @@ li {
 }
 
 .one_person {
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
   border-radius: 7px;
   margin: 10px;
   background-color: #FFF;
-  padding: 15px;
+  padding: 10px;
   box-shadow: 0 6px 11px 0 rgba(0, 0, 0, .5);
 }
 
