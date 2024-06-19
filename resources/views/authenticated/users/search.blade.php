@@ -51,37 +51,37 @@
     </div>
     @endforeach
   </div>
-  <div class="search_area w-25 border">
-    <div class="">
-      検索
+  <div class="search_area w-25">
+    <div class="reserve_users_area_side">
+      <span class="reserve_users_area_search">検索</span>
       <div>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
       <div>
-        <lavel>カテゴリ</lavel><br>
+        <span class="reserve_users_area_item">カテゴリ</span><br>
         <select form="userSearchRequest" name="category" class="userSearch-category">
           <option value="name">名前</option>
           <option value="id">社員ID</option>
         </select>
       </div>
       <div>
-        <label>並び替え</label><br>
+        <span class="reserve_users_area_item">並び替え</span><br>
         <select name="updown" form="userSearchRequest" class="userSearch-updown">
           <option value="ASC">昇順</option>
           <option value="DESC">降順</option>
         </select>
       </div>
       <div class="add-search_conditions">
-        <p class="m-0 search_conditions"><span>検索条件の追加</span><span class="dli-chevron-down arrow2"></span></p>
+        <p class="m-0 search_conditions"><span class="reserve_users_area_item">検索条件の追加</span><span class="dli-chevron-down arrow2"></span></p>
         <div class="search_conditions_inner">
           <div>
-            <label>性別</label>
+            <span class="reserve_users_area_item">性別</span><br>
             <span>男</span><input type="radio" name="sex" value="1" form="userSearchRequest">
             <span>女</span><input type="radio" name="sex" value="2" form="userSearchRequest">
             <span>その他</span><input type="radio" name="sex" value="3" form="userSearchRequest">
           </div>
           <div>
-            <label>権限</label><br>
+            <span class="reserve_users_area_item">権限</span><br>
             <select name="role" form="userSearchRequest" class="engineer">
               <option selected disabled>----</option>
               <option value="1">教師(国語)</option>
@@ -92,7 +92,7 @@
           </div>
 
            <div class="selected_engineer">
-            <label>選択科目</label> <br>
+            <span class="reserve_users_area_item">選択科目</span> <br>
             <!-- 同じname属性で複数のvalueを扱いたい場合にはname属性の後ろに配列を表す[]を付ける -->
            @foreach($subjects as $subject)
             <span>{{ $subject->subject }}</span> <input type="checkbox" name="subject[]" value="{{ $subject->id }}" form="userSearchRequest"/>

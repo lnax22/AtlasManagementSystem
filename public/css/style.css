@@ -82,10 +82,16 @@ li {
 
 /* サイドバー */
 .sidebar {
-  width: 170px;
+  width: 215px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
+  padding: 5px;
+  padding-top: 20px;
+}
+
+.side-bar-icon {
+  margin-left: 10px;
 }
 
 .main-container {
@@ -227,7 +233,7 @@ li {
 }
 
 /* モーダル */
-.button{
+.button {
   border-radius: 5%;
 }
 
@@ -485,6 +491,10 @@ li {
   font-size: 12px;
 }
 
+.btn-primary.comment-area {
+  margin-left: 320px;
+}
+
 .post_status span {
   font-size: 12px;
 }
@@ -631,7 +641,6 @@ li {
   border-bottom: 2px solid #CCCCCC;
 }
 
-
 /* サブカテゴリー */
 .subcategory_area {
   background: #FFF;
@@ -665,22 +674,35 @@ li {
 /* ユーザー検索 */
 .reserve_users_area {
   display: flex;
-  flex-wrap: wrap;
   width: 800px;
-  margin: 10px auto;
   height: 80vh;
-  overflow: scroll;
   padding: 10px;
-  border-radius: 5px;
+  overflow: scroll;
 }
 
 .reserve_users_area span {
   font-size: 12px;
 }
 
+.reserve_users_area_side {
+  margin: 20px;
+  margin-top: 55px;
+}
+
+.reserve_users_area_item {
+  color: #191970;
+  font-weight: lighter;
+}
+
+.reserve_users_area_search {
+  color: #191970;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
 .one_person {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 7px;
   margin: 10px;
   background-color: #FFF;
@@ -714,7 +736,7 @@ li {
   border-radius: 6px 6px 6px 6px;
   border: 1px solid #ccc;
   margin-top: 10px;
-  background-color: #EEEEEE;
+  background-color: #DDDDDD;
 }
 
 .userSearch-category {
@@ -729,7 +751,7 @@ li {
   border-radius: 6px 6px 6px 6px;
   border: 1px solid #ccc;
   margin-top: 10px;
-  background-color: #EEEEEE;
+  background-color: #DDDDDD;
 }
 
 .userSearch-updown {
@@ -744,7 +766,7 @@ li {
   border-radius: 5px 5px 5px 5px;
   border: 1px solid #ccc;
   margin-top: 10px;
-  background-color: #EEEEEE;
+  background-color: #DDDDDD;
 }
 
 .search_btn {
@@ -762,7 +784,7 @@ li {
 .engineer {
   border-radius: 5px 5px 5px 5px;
   border: 1px solid #ccc;
-  background-color: #EEEEEE;
+  background-color: #DDDDDD;
   width: 80px;
   height: 35px;
 }
@@ -804,6 +826,10 @@ li {
   font-size: 15px;
   color: #03AAD2;
   cursor: pointer;
+}
+
+.btn-primary {
+  margin-left: 10px;
 }
 
 .subjectRegistration {
