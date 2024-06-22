@@ -12,7 +12,7 @@
         {!! $calendar->render() !!}
       </div>
     </div>
-    <div class="text-right m-auto">
+    <div class="text-right">
       <input type="submit" class="btn btn-primary" value="予約する" form="reserveParts">
     </div>
 

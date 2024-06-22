@@ -230,6 +230,10 @@ li {
   margin: 0 auto;
 }
 
+.text-right {
+  margin-bottom: 15px;
+}
+
 
 /* スクール予約確認 */
 .school_reserve,
@@ -322,6 +326,10 @@ li {
 .un_like,
 .un_like_btn {
   color: #E2254D;
+}
+
+.fa-heart:before {
+  border: #E2254D;
 }
 
 .error_message {
@@ -616,7 +624,6 @@ li {
 }
 
 .main_categories {
-  display: flex;
   align-items: center;
   padding: 4px;
   cursor: pointer;
@@ -657,8 +664,6 @@ li {
 .sub_category_accordion {
   border: none;
   font-size: small;
-  margin-top: 60px;
-  margin-left: -190px;
   border-bottom: 2px solid #CCCCCC;
 }
 
