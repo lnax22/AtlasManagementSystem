@@ -233,14 +233,15 @@ li {
 
 .text-right {
   margin-bottom: 15px;
+  padding-right: 40px;
 }
 
 
 /* スクール予約確認 */
 .school_reserve,
 .school-general {
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 45px;
+  padding-right: 45px;
   margin-bottom: 15px;
 }
 
