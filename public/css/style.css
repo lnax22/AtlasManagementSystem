@@ -128,6 +128,7 @@ li {
   color: #FF0000;
 }
 
+
 .past-day {
   background: #EEE;
 }
@@ -328,9 +329,52 @@ li {
   color: #E2254D;
 }
 
-.fa-heart:before {
-  border: #E2254D;
+.fas.fa-heart.like_btn {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  /* アイコンの幅 */
+  height: 15px;
+  /* アイコンの高さ */
 }
+
+.fas.fa-heart.like_btn::before,
+.fas.fa-heart.like_btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 12px;
+  /* ハートの半分の幅 */
+  height: 18px;
+  /* ハートの高さ */
+  border: 2px solid gray;
+  /* 枠線の色と太さ */
+  border-top-left-radius: 12px;
+  /* 左上の丸み */
+  border-top-right-radius: 12px;
+  /* 右上の丸み */
+  background-color: white;
+  /* 中抜きの色 */
+  box-sizing: border-box;
+}
+
+.fas.fa-heart.like_btn::before {
+  left: 12px;
+  /* 左側の位置調整 */
+  transform: rotate(-45deg);
+  /* 回転させてハート形を作る */
+  transform-origin: 0 100%;
+  /* 回転の基点を設定 */
+}
+
+.fas.fa-heart.like_btn::after {
+  left: 0;
+  transform: rotate(45deg);
+  /* 回転させてハート形を作る */
+  transform-origin: 100% 100%;
+  /* 回転の基点を設定 */
+}
+
 
 .error_message {
   font-size: 12px;
@@ -642,19 +686,21 @@ li {
 
 .arrow3 {
   color: #000;
+  width: 1em;
+  height: 1em;
   line-height: 1;
-  width: 0.7em;
-  height: 0.7em;
   border: 0.14em solid currentColor;
   border-left: 0;
   border-bottom: 0;
   box-sizing: border-box;
-  transform: translateY(-25%) rotate(135deg);
+  transform: translateY(25%) rotate(45deg);
   transition: transform 0.3s ease;
+  margin-left: 30px;
 }
 
+
 .arrow3.up {
-  transform: rotate(315deg);
+  transform: rotate(180deg);
 }
 
 .sub_categories_inner {
