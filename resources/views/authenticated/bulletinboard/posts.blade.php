@@ -56,7 +56,7 @@
              <span class="dli-chevron-down arrow3"></span>
             <div class="sub_categories_inner">
               @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)
-              <input type="submit" name="sub_category_word" class="sub_category_accordion" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+               <input type="submit" name="sub_category_word" class="sub_category_accordion" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
               @endforeach
             </div>
            </div>

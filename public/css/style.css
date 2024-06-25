@@ -673,6 +673,7 @@ li {
   padding: 4px;
   cursor: pointer;
   position: relative;
+  display: flex;
 }
 
 .main_categories p {
@@ -687,14 +688,14 @@ li {
 
 .arrow3 {
   color: #000;
-  width: 1em;
-  height: 1em;
+  width: 0.7em;
+  height: 0.7em;
   line-height: 1;
   border: 0.14em solid currentColor;
   border-left: 0;
   border-bottom: 0;
   box-sizing: border-box;
-  transform: translateY(25%) rotate(45deg);
+  transform: translateY(-25%) rotate(135deg);
   transition: transform 0.3s ease;
   margin-left: 30px;
 }
