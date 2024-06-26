@@ -41,7 +41,7 @@ class CalendarView{
 
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
           //過ぎた日にち
-          $html[] = '<td class="calendar-td past">';
+          $html[] = '<td class="calendar-td past '.$day->getClassName().'">';
           $html[] = $day->render();
           }else{
 
