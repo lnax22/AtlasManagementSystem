@@ -48,7 +48,7 @@ $(function () {
     });
   });
 
-  $('.edit-modal-open').on('click',function(){
+  $('.edit-modal-open').on('click', function () {
     $('.js-modal').fadeIn();
     var post_title = $(this).attr('post_title');
     var post_body = $(this).attr('post_body');
@@ -67,9 +67,9 @@ $(function () {
   $(function () {
     $(".main_categories").on("click", function () {
       // クリックされた .main_categories 内の .sub_categories をスライド表示/非表示
-      $(this).find('.sub_categories_inner').slideToggle(200);
+      $('.sub_categories_inner').slideToggle(200);
       /*矢印の向きを変更*/
-      $(this).find('.arrow3').toggleClass("up", 200);
+      $(this).find('.arrow3').toggleClass("up");
     });
   });
 

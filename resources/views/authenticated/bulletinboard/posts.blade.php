@@ -21,13 +21,13 @@
     <!-- public function commentCounts($post_id){
         return Post::with('postComments')->find($post_id)->postComments();
     } -->
-            <i class="fa fa-comment"></i><span class="comment_Counts{{ $post->id }}">{{ $post_comment->commentCounts($post->id)->count() }}</span>
+           <i class="fa fa-comment"></i><span class="comment_Counts{{ $post->id }}">{{ $post_comment->commentCounts($post->id)->count() }}</span>
           </div>
           <div>
             @if(Auth::user()->is_Like($post->id))
             <p class="m-0"><i class="fa fa-heart-o like_btn" post_id="{{ $post->id }}"></i><span class="like_counts{{ $post->id }}"> {{ $like->likeCounts($post->id) }} </span></p>
             @else
-            <p class="m-0"><i class="fas fa-heart like_btn" post_id="{{ $post->id }}"></i><span class="like_counts{{ $post->id }}"> {{ $like->likeCounts($post->id) }} </span></p>
+            <p class="m-0"><i class="far fa-heart" post_id="{{ $post->id }}"></i><span class="like_counts{{ $post->id }}"> {{ $like->likeCounts($post->id) }} </span></p>
             @endif
           </div>
         </div>
@@ -52,7 +52,7 @@
          <ul>
           <li>
            <div class="main_categories" name="category_word">
-             <p class="main_categories_under">{{ $main_category->main_category}}</p>
+             <p class="main_category_title">{{ $main_category->main_category}}</p>
              <span class="dli-chevron-down arrow3"></span>
             <div class="sub_categories_inner">
               @foreach($sub_categories->where('main_category_id', $main_category->id) as $sub_category)

@@ -330,26 +330,6 @@ li {
   color: #E2254D;
 }
 
-.like_btn {
-  font-size: 20px;
-  /* アイコンのサイズ */
-  color: gray;
-  /* 枠線の色 */
-}
-
-.like_btn::before {
-  content: "\f004";
-  /* FontAwesomeのハートのUnicode */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  color: white;
-  /* アイコンの中の色 */
-  font-size: 15px;
-  /* アイコンのサイズ */
-}
-
-
 
 .error_message {
   font-size: 12px;
@@ -648,6 +628,7 @@ li {
   cursor: pointer;
   position: relative;
   display: flex;
+  border-bottom: 2px solid #CCCCCC;
 }
 
 .main_categories p {
@@ -656,9 +637,6 @@ li {
   white-space: nowrap;
 }
 
-.main_categories_under {
-  border-bottom: 2px solid #CCCCCC;
-}
 
 .arrow3 {
   color: #000;
@@ -683,7 +661,12 @@ li {
   display: none;
 }
 
+.main_category_title {
+  cursor: pointer;
+}
+
 .sub_category_accordion {
+  display: block;
   border: none;
   font-size: small;
   border-bottom: 2px solid #CCCCCC;
