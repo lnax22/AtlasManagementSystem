@@ -15,5 +15,3 @@ $(function () {
       $(this).find('.arrow').toggleClass("up", 200);
     });
   });
-
-

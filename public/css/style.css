@@ -627,8 +627,6 @@ li {
   padding: 4px;
   cursor: pointer;
   position: relative;
-  display: flex;
-  border-bottom: 2px solid #CCCCCC;
 }
 
 .main_categories p {
@@ -637,39 +635,42 @@ li {
   white-space: nowrap;
 }
 
-
 .arrow3 {
   color: #000;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
   width: 0.7em;
   height: 0.7em;
-  line-height: 1;
   border: 0.14em solid currentColor;
   border-left: 0;
   border-bottom: 0;
   box-sizing: border-box;
   transform: translateY(-25%) rotate(135deg);
   transition: transform 0.3s ease;
-  margin-left: 30px;
+  margin-left: 180px;
+  margin-top: -55px;
 }
 
-
 .arrow3.up {
-  transform: rotate(180deg);
+  transform: rotate(315deg);
 }
 
 .sub_categories_inner {
   display: none;
+  margin-left: 1em;
+  border-bottom: 2px solid #CCCCCC;
 }
 
 .main_category_title {
   cursor: pointer;
+  border-bottom: 2px solid #CCCCCC;
 }
 
 .sub_category_accordion {
   display: block;
   border: none;
   font-size: small;
-  border-bottom: 2px solid #CCCCCC;
 }
 
 /* サブカテゴリー */
