@@ -64,12 +64,14 @@ $(function () {
   });
 
   // アコーディオンメニュー(カテゴリー検索)
-    $(".main_categories").on("click", function () {
-      // クリックされた .main_categories 内の .sub_categories をスライド表示/非表示
-      $('.sub_categories_inner').slideToggle(200);
-      /*矢印の向きを変更*/
-      $(this).find('.arrow3').toggleClass("up");
+  $(".main_categories").on("click", function () {
+    // クリックされた .main_categories 内の .sub_categories_inner をスライド表示/非表示
+    $(this).find('.sub_categories_inner').slideToggle(200);
+
+    /* 矢印の向きを変更 */
+    $(this).find('.arrow3').toggleClass("up");
   });
+
 
 
 });
