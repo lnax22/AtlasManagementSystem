@@ -661,9 +661,7 @@ li {
   margin-left: 1em;
 }
 
-.sub_category_under{
-  border-bottom: 2px solid #CCCCCC;
-}
+.sub_category_under {}
 
 .main_category_title {
   cursor: pointer;
@@ -671,9 +669,13 @@ li {
 }
 
 .sub_category_accordion {
+  margin-top: 10px;
   display: block;
   border: none;
   font-size: small;
+  width: 160px;
+  text-align: left;
+  border-bottom: 2px solid #CCCCCC;
 }
 
 /* サブカテゴリー */
